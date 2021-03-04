@@ -180,8 +180,8 @@ const Publicacao = ({ post }) => {
                         sizes="(max-width: 758px) 100vw, 758px"
                       />
                     </figure>
-                    <div>
-                   <ReactSafeHtml html={post.content.rendered}></ReactSafeHtml>
+                    <div  dangerouslySetInnerHTML={{__html: post.content.rendered}}>
+                 
                     </div>
                   </article>
                   <footer className="content-area__footer max">
