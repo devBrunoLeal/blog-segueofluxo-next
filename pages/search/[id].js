@@ -7,18 +7,21 @@ import Header from "../../../components/header";
 import Footer from "../../../components/footer";
 const axios = require("axios");
 var ReactSafeHtml = require('react-safe-html');
+
+
+
 export async function getServerSideProps(context) {
   const id = context.params.id;
   const res = await fetch(
-    `https://api.segueofluxo.com/wp-json/wp/v2/posts/${id}?_embed=1`
+    `https://api.segueofluxo.com/wp-json/wp/v2/posts?categories=${id}&_embed=1`
   );
   const data = await res.json();
-
   data.resumo = data.excerpt.rendered;
   data.resumo = data.resumo.replace("<p>", "");
   data.resumo = data.resumo.replace("</p>", "");
   data.resumo = data.resumo.replace(/\n/g, "");
 
+  console.log()
   return {
     props: { post: data },
   };
@@ -26,11 +29,14 @@ export async function getServerSideProps(context) {
 }
 
 export async function getServerSidePaths() {
-
-  const paths =  {
-      params: { id: '1', title: '2' },
+  const res = await fetch("https://api.segueofluxo.com/wp-json/wp/v2/posts?_filter=id");
+  const data = await res.json();
+console.log(data);
+  const paths = data.map((postagem) => {
+    return {
+      params: { id: postagem.id.toString(), title: postagem.title.rendered },
     };
-  
+  });
 
   return {
     paths,

@@ -18,6 +18,7 @@ export default function Posts({ noticia }) {
          
         </div>
         <div className="loop__item__description">
+          
           <a className="title-cat" href="">
             {noticia._embedded["wp:term"][0][0].name}
           </a>

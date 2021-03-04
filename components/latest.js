@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const axios = require('axios')
 
-export default function Latest({ children, showLatest }) {
+export default function Latest({ children, showLatest, titleLatest }) {
 
  
 useEffect(() => {
@@ -41,10 +41,15 @@ await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then
       <div className="wrapper">
         <section className="loop col-content">
           {showLatest? <header className="heading max">
+            
+            {titleLatest? 
             <h2 className="title title--small title--section">
-              Noticias 
-              <span className="title__color"> Recentes</span>
-            </h2>
+              Busca: {titleLatest}  </h2>:
+               <h2 className="title title--small title--section">
+               Noticias 
+             <span className="title__color"> Recentes</span>
+             </h2>
+             }
           </header>: ''}
 
 {/*           <header className="heading max">
