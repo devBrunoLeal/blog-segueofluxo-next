@@ -10,6 +10,16 @@ body {
   color: white !important;
   background:#2051c0 !important;
 }
+
+.tag-latest{
+  background: #1647b5;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    font-family: Sabado;
+}
+
+
 .pagination{
   margin: auto;
   display: flex;
