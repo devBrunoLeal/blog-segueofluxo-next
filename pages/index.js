@@ -1,65 +1,91 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import React, { useState, useEffect } from "react";
+import Link from "next/Link";
+import MetaTags from "react-meta-tags";
+import Header from "../components/header";
+import Destaques from "../components/destaques"
+import Footer from "../components/footer";
+import Latest from "../components/latest"
+import Posts from "../components/posts"
+var sectionStyle = {
+  backgroundImage:
+    "url(http://segueofluxo-com.umbler.net/upload/18-11-2021-23-18-352146272753_140935941192338_120001703584040028_n.jpg)",
+};
+
+var destaques = {
+  maxWidth: "1120px",
+  maxHeigth: "480px",
+  margin: "auto",
+};
+const axios = require('axios')
+
+
 
 export default function Home() {
+  const [Destaque, setDestaques] = useState([]);
+
+
+  useEffect(() => {
+    // Atualiza o titulo do documento usando a API do browser
+
+   getDestaque();
+   getPosts()
+ 
+  },[]);
+  
+ async function getDestaque(){
+  await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then(
+    (response) => {
+      return setDestaques(response.data);
+    },
+    (error) => {
+      alert("erro");
+    }
+  );
+ }
+
+ const [posts, setPosts] = useState([]);
+
+ async function getPosts(){
+  await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then(
+    (response) => {
+     console.log(response.data)
+      return setPosts(response.data);
+    },
+    (error) => {
+      alert("erro");
+    }
+  );
+ }
+  
+  
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <Header></Header>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <MetaTags>
+        <title>FASFSAFS</title>
+        <meta name="description" content="Some description." />
+        <meta property="og:title" content="MyApp" />
+        <meta property="og:image" content="path/to/image.jpg" />
+      </MetaTags>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+      <title>Page 1</title>
+      <meta
+        id="meta-description"
+        name="description"
+        content="Some description."
+      />
+      <meta id="og-title" property="og:title" content="MyApp" />
+      <meta id="og-image" property="og:image" content="path/to/image.jpg" />
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+      <section style={destaques} className="featured max">
+        {Destaque.map((res) => (  <Destaques res={res} key={res.id}></Destaques>  ))}
+      </section>
+       <Latest>{posts.map(post => (<Posts key={post.id} noticia={post}></Posts>))}</Latest> 
+      <Footer></Footer>
+    </>
+  );
 }
