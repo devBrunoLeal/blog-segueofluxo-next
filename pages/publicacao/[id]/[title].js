@@ -3,7 +3,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import Latest from "../../../components/latest";
-
+import Header from "../../../components/header";
+import Footer from "../../../components/footer";
 const axios = require("axios");
 var ReactSafeHtml = require('react-safe-html');
 export async function getServerSideProps(context) {
@@ -25,9 +26,9 @@ export async function getServerSideProps(context) {
 }
 
 export async function getServerSidePaths() {
-  const res = await fetch("https://api.segueofluxo.com/wp-json/wp/v2/posts");
+  const res = await fetch("https://api.segueofluxo.com/wp-json/wp/v2/posts?_filter=id");
   const data = await res.json();
-
+console.log(data);
   const paths = data.map((postagem) => {
     return {
       params: { id: postagem.id.toString(), title: postagem.title.rendered },
@@ -44,6 +45,7 @@ const Publicacao = ({ post }) => {
   if (post) {
     return (
       <>
+      <Header></Header>
         {console.log(post)}
         <div className="main max" id="main" role="main">
           <Head>
@@ -54,7 +56,8 @@ const Publicacao = ({ post }) => {
             <meta name="robots" content="none" />
             <meta name="author" content={post._embedded.author[0].name} />
             <meta name="keywords" content="segueofluxo, funk ,noticia" />
-
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0" nonce="xF3GKLHk"></script>
             <meta property="og:type" content="page" />
             <meta
               property="og:url"
@@ -289,7 +292,7 @@ const Publicacao = ({ post }) => {
                     <h4 className="title title--small title--upper">
                       Comentários:
                     </h4>
-                    <div id="frame_idd"></div>
+                    <div className="fb-comments" data-href={"https://www.facebook.com/sharer/sharer.php?u=https://segueofluxo.com/publicacao/" + post.id + "/" + post.title.rendered} data-width="730" data-numposts="5"></div>
                   </div>
 
                   {/* <div className="related max max--margin-top">
@@ -402,6 +405,7 @@ const Publicacao = ({ post }) => {
             </main>
           </Latest>
         </div>
+        <Footer></Footer>
       </>
     );
   } else {

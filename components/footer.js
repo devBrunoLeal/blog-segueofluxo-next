@@ -3,6 +3,7 @@ import styles from "../styles/Footer.module.css";
 var styleFooter = {
     maxWidth: "1020px",
     margin: "auto",
+    fontSize: '16px',
     display: "flex",
     justifyContent: 'space-between',
 }

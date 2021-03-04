@@ -35,8 +35,9 @@ export default function Home() {
   },[]);
   
  async function getDestaque(){
-  await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then(
+  await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1&sticky=true&per_page=3&orderby=date").then(
     (response) => {
+      console.log(response)
       return setDestaques(response.data);
     },
     (error) => {
@@ -81,7 +82,7 @@ export default function Home() {
       <meta id="og-title" property="og:title" content="MyApp" />
       <meta id="og-image" property="og:image" content="path/to/image.jpg" />
 
-      <div  style={{ maxHeight: "479px"}} className="destaques">
+      <div  style={{ maxHeight: "479px", marginTop: '22px'}} className="destaques">
       <section style={destaques} className="featured max">
         {Destaque.map((res) => (  <Destaques  res={res} key={res.id}></Destaques>  ))}
       </section>
