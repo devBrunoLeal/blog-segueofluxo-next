@@ -8,7 +8,7 @@ const axios = require("axios");
 
 
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 const id = context.params.id;
 const res = await fetch(`https://api.segueofluxo.com/wp-json/wp/v2/posts/${id}?_embed=1`)
 const data = await res.json()
@@ -33,7 +33,7 @@ const data = await res.json()
   }
 
   
-export async function getStaticPaths(){
+export async function getServerSidePaths(){
   const res = await fetch('https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1')
   const data = await res.json();
 
