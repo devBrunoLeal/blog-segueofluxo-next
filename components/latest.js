@@ -140,6 +140,7 @@ await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then
             <h4 className="title title--smaller title--upper tag-latest">
               Mais acessadas
             </h4>
+            
             <ul className="widget__posts">
             
             {altaDestaque.map(destaq => (<li key={destaq.id}
