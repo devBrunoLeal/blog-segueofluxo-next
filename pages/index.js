@@ -15,7 +15,7 @@ var sectionStyle = {
 
 var destaques = {
   maxWidth: "1120px",
-  maxHeigth: "480px",
+  maxHeight: "480px",
   margin: "auto",
 };
 const axios = require('axios')
@@ -81,10 +81,13 @@ export default function Home() {
       <meta id="og-title" property="og:title" content="MyApp" />
       <meta id="og-image" property="og:image" content="path/to/image.jpg" />
 
+      <div  style={{ maxHeight: "479px"}} className="destaques">
       <section style={destaques} className="featured max">
-        {Destaque.map((res) => (  <Destaques res={res} key={res.id}></Destaques>  ))}
+        {Destaque.map((res) => (  <Destaques  res={res} key={res.id}></Destaques>  ))}
       </section>
-       <Latest>{posts.map(post => (<Posts key={post.id} noticia={post}></Posts>))}</Latest> 
+      </div>
+     
+       <Latest showLatest={true}>{posts.map(post => (<Posts key={post.id} noticia={post}></Posts>))}</Latest> 
       <Footer></Footer>
     </>
   );
