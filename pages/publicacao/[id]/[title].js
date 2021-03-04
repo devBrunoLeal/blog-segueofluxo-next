@@ -57,10 +57,27 @@ const Publicacao = ({post}) => {
             {console.log(post)}
             <div className="main max" id="main" role="main">
               <Head>
-                <title>PAGE TWO</title>
-                <meta name="description" content="Some description." />
-                <meta property="og:title" content="MyApp" />
-                <meta property="og:image" content="path/to/image.jpg" />
+              <meta charset="utf-8">
+        <meta name="language" content="pt-BR">
+        <title>{post.title.rendered}</title>
+        <meta name="description" content={post.title.rendered}>
+        <meta name="robots" content="none">
+        <meta name="author" content={post._embedded.author[0].name}>
+        <meta name="keywords" content="fs, fsafs ,fsaf">
+
+        <meta property="og:type" content="page">
+        <meta property="og:url" content={window.location.href}>
+        <meta property="og:title" content={post.title.rendered}>
+        <meta property="og:image" content={post["better_featured_image"]["source_url"]}>
+        <meta property="og:description" content={post.title.rendered}>
+
+        <meta property="article:author" content={post._embedded.author[0].name}>
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+        <meta name="twitter:title" content={post.title.rendered}>
+        <meta name="twitter:creator" content="@">
+        <meta name="twitter:description" content="">
               </Head>
     
               <h1>Publicacao</h1>
@@ -97,7 +114,7 @@ const Publicacao = ({post}) => {
                           <b className="share__title">compartilhe:</b>
                           <a
                             className="share__button"
-                            href="https://www.facebook.com/sharer/sharer.php?u=linkAtual"
+                            href={"https://www.facebook.com/sharer/sharer.php?u=https://blog-segueofluxo-next.vercel.app/publicacao/"+post.id+"/"+post.title.rendered}
                             target="blank"
                             rel="noopener"
                           >
