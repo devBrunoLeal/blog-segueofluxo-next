@@ -49,7 +49,7 @@ export default function Header() {
     <>
     <div style={backgroundSpace}></div>
       <div style={background}>
-        <div style={{ maxWidth: "1120px" }} className="conteud-header">
+        <div style={{ maxWidth: "1120px" }} className="font-sabado conteud-header">
           <div  className="logoHeader">
             <a href="/">
             <Image

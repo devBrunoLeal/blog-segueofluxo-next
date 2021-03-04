@@ -6,6 +6,16 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+@font-face {
+  font-family: "Sabado";
+  src: url("./sabado.otf") format("opentype");
+}
+
+@font-face {
+  font-weight: bold;
+  font-family: "Sabado";
+  src: url("./sabado.otf") format("opentype");
+}
 .active{
   color: white !important;
   background:#2051c0 !important;
@@ -16,7 +26,11 @@ body {
     color: #fff !important;
     padding: 5px;
     text-align: center;
-    font-family: Sabado;
+    font-family: 'Sabado' !important;
+}
+
+.font-sabado{
+  font-family: 'Sabado' !important;
 }
 
 

@@ -40,7 +40,7 @@ export default function Latest({ children, showLatest, titleLatest }) {
                   Busca: {titleLatest}{" "}
                 </h2>
               ) : (
-                <h2 className="title title--small title--section">
+                <h2 className="title font-sabado title--small title--section">
                   Noticias
                   <span className="title__color"> Recentes</span>
                 </h2>
