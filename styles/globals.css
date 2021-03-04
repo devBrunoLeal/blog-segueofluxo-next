@@ -13,7 +13,7 @@ body {
 
 .tag-latest{
   background: #1647b5;
-    color: #fff;
+    color: #fff !important;
     padding: 5px;
     text-align: center;
     font-family: Sabado;
