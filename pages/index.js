@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import React, { useState, useEffect } from "react";
-import Link from "next/Link";
+import Link from "next/link";
 import MetaTags from "react-meta-tags";
 import Header from "../components/header";
 import Destaques from "../components/destaques"
