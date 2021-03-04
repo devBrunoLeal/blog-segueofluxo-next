@@ -42,7 +42,7 @@ const Publicacao = ({ post }) => {
   if (post) {
     return (
       <>
-      <Header></Header>
+      
         {console.log(post)}
         <div className="main max" id="main" role="main">
           <Head>
@@ -403,7 +403,7 @@ const Publicacao = ({ post }) => {
             </main>
           </Latest>
         </div>
-        <Footer></Footer>
+        
       </>
     );
   } else {
