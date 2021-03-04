@@ -22,9 +22,7 @@ export default function Posts({ noticia }) {
             {noticia._embedded["wp:term"][0][0].name}
           </a>
           <h2 className="title title--medium">
-          <Link  href={"publicacao/"+noticia.id+"/"+noticia.title.rendered}>
-            <a > {noticia.title.rendered}</a>
-          </Link>
+            <a href={"publicacao/"+noticia.id+"/"+noticia.title.rendered}> {noticia.title.rendered}</a>
           </h2>
           <span className="byline">
             <span className="byline__item">
