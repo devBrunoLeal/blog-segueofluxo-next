@@ -57,29 +57,29 @@ const Publicacao = ({post}) => {
             {console.log(post)}
             <div className="main max" id="main" role="main">
               <Head>
-              <meta charset="utf-8">
-        <meta name="language" content="pt-BR">
-        <title>{post.title.rendered}</title>
-        <meta name="description" content={post.title.rendered}>
-        <meta name="robots" content="none">
-        <meta name="author" content={post._embedded.author[0].name}>
-        <meta name="keywords" content="fs, fsafs ,fsaf">
+                  <meta charset="utf-8"/>
+                  <meta name="language" content="pt-BR"/>
+                   <title>{post.title.rendered}</title>
+                   <meta name="description" content={post.title.rendered}/>
+                      <meta name="robots" content="none"/>
+                     <meta name="author" content={post._embedded.author[0].name}/>
+                    <meta name="keywords" content="fs, fsafs ,fsaf"/>
 
-        <meta property="og:type" content="page">
-        <meta property="og:url" content={window.location.href}>
-        <meta property="og:title" content={post.title.rendered}>
-        <meta property="og:image" content={post["better_featured_image"]["source_url"]}>
-        <meta property="og:description" content={post.title.rendered}>
+                        <meta property="og:type" content="page"/>
+                     <meta property="og:url" content={window.location.href}/>
+                          <meta property="og:title" content={post.title.rendered}/>
+                          <meta property="og:image" content={post["better_featured_image"]["source_url"]}/>
+                               <meta property="og:description" content={post.title.rendered}/>
 
-        <meta property="article:author" content={post._embedded.author[0].name}>
+                               <meta property="article:author" content={post._embedded.author[0].name}/>
 
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@">
-        <meta name="twitter:title" content={post.title.rendered}>
-        <meta name="twitter:creator" content="@">
-        <meta name="twitter:description" content="">
+                       <meta name="twitter:card" content="summary"/>
+                           <meta name="twitter:site" content="@"/>
+                          <meta name="twitter:title" content={post.title.rendered}/>
+                     <meta name="twitter:creator" content="@"/>
+                               <meta name="twitter:description" content=""/>
               </Head>
-    
+  
               <h1>Publicacao</h1>
             </div>
     
