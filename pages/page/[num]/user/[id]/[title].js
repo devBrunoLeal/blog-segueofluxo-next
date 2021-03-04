@@ -85,7 +85,7 @@ const User = ({ posts, title }) => {
             <meta name="twitter:description" content="" />
           </Head>
 
-          <Latest titleLatest={title} showLatest="true">
+          <Latest titleLatest={title} showLatest={true}>
           {posts.length > 0?  posts.map(post => (<Posts key={post.id} noticia={post}> </Posts>)):<NotFound></NotFound>}
           </Latest>
         </div>
