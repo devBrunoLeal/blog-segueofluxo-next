@@ -63,10 +63,10 @@ const Publicacao = ({post}) => {
                    <meta name="description" content={post.title.rendered}/>
                       <meta name="robots" content="none"/>
                      <meta name="author" content={post._embedded.author[0].name}/>
-                    <meta name="keywords" content="fs, fsafs ,fsaf"/>
+                    <meta name="keywords" content="segueofluxo, funk ,noticia"/>
 
                         <meta property="og:type" content="page"/>
-                     <meta property="og:url" content={window.location.href}/>
+                     <meta property="og:url" content={"https://blog-segueofluxo-next.vercel.app/publicacao/"+post.id+"/"+post.title.rendered}/>
                           <meta property="og:title" content={post.title.rendered}/>
                           <meta property="og:image" content={post["better_featured_image"]["source_url"]}/>
                                <meta property="og:description" content={post.title.rendered}/>
