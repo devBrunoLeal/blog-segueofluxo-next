@@ -185,11 +185,12 @@ const Publicacao = ({ post }) => {
                     </div>
                   </article>
                   <footer className="content-area__footer max">
-                    {/* <ul className="content-area__tags">
+                    <ul className="content-area__tags">
               <li>
-                  <a href="lancamentos.html" rel="tag">Lançamentos</a>
+                  {post._embedded["wp:term"][1].map(tag => (tag? <a href={'/page/1/tags/'+tag.id+'/'+tag.slug} rel="tag">{tag.name}</a>:''))}
+                  
                 </li>
-              </ul> */}
+              </ul> 
                     <div className="share">
                       <b className="share__title">compartilhe:</b>
                       <a
@@ -244,7 +245,7 @@ const Publicacao = ({ post }) => {
                           <a rel="author">{post._embedded.author[0].name}</a>
                         </b>
                         {post._embedded.author[0].description}
-                        <ul className="author__social">
+                        <ul style={{display: 'none'}} className="author__social">
                           <li>
                             <a
                               href="user.facebook"

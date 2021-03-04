@@ -2,27 +2,33 @@ import { MetaTags } from "react-meta-tags";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
-import Latest from "../../../../../components/latest";
-import Header from "../../../../../components/header";
-import Footer from "../../../../../components/footer";
-import Posts from "../../../../../components/posts";
-import NotFound from "../../../../../components/notfound"
+import Latest from "../../../components/latest"
+import Header from "../../../components/header";
+import Footer from "../../../components/footer";
+import Posts from "../../../components/posts";
+import Destaques from "../../../components/destaques"
+import NotFound from "../../../components/notfound";
 const axios = require("axios");
 var ReactSafeHtml = require('react-safe-html');
 
 
 
 export async function getServerSideProps(context) {
-  const id = context.params.id;
+
   const page = context.params.num
   const res = await fetch(
-    `https://api.segueofluxo.com/wp-json/wp/v2/posts?categories=${id}&_embed=1&per_page=2&page=${page}`
+    `https://api.segueofluxo.com/wp-json/wp/v2/posts?&_embed=1&per_page=2&page=${page}`
   );
   const data = await res.json();
+
+
+  const destaques = await fetch('https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1&sticky=true&per_page=3&orderby=date');
+  const destaque = await destaques.json();
+
   console.log(data);
 
   return {
-    props: { posts: data, title: context.params.title, page:context.params.num },
+    props: { posts: data,title: 'Postagens', destaques: destaque , page: page },
   };
 
 }
@@ -30,7 +36,7 @@ export async function getServerSideProps(context) {
 export async function getServerSidePaths() {
 
   const paths = {
-      params: {num:'1', id: '1', title: '1' },
+      params: {num: '1'}
     };
 
   return {
@@ -39,27 +45,21 @@ export async function getServerSidePaths() {
   };
 }
 
+var destaquesStyle = {
+    maxWidth: "1120px",
+    maxHeight: "480px",
+    margin: "auto",
+  };
 
-async function getLastPost() {
-  const res = await fetch(
-    `https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1&per_page=10`
-  );
-  const data = await res.json();
-  console.log(data);
-
-  return data
-}
-
-
-const Categoria = ({ posts, title, page}) => {
+const HomePage = ({ posts, destaques, title }) => {
   if (posts) {
     return (
       <>
       <Header></Header>
-        {console.log(posts, page)}
+        {console.log(posts)}
         <div className="main max" id="main" role="main">
           <Head>
-            <meta charSet="utf-8" />
+          <meta charSet="utf-8" />
             <meta name="language" content="pt-BR" />
             <title>{title}</title>
             <meta name="description" content={'Busca por '+title}/>
@@ -74,10 +74,16 @@ const Categoria = ({ posts, title, page}) => {
             />
             <meta property="og:description" content="O melhor do funk"/>
           </Head>
+        
+        
+        <div  style={{ maxHeight: "479px", marginTop: '22px'}} className="destaques">
+       <section style={destaquesStyle} className="featured max">
+        {destaques.map((res) => (  <Destaques  res={res} key={res.id}></Destaques>  ))}
+       </section>
+       </div>
 
-          <Latest titleLatest={title} showLatest="true">
-            {posts.length > 0?  posts.map(post => (<Posts key={post.id} noticia={post}> </Posts>)):<NotFound></NotFound>}
-         
+          <Latest showLatest="true">
+          {posts.length > 0?  posts.map(post => (<Posts key={post.id} noticia={post}> </Posts>)):<NotFound></NotFound>}
           </Latest>
         </div>
         <Footer></Footer>
@@ -88,4 +94,4 @@ const Categoria = ({ posts, title, page}) => {
   }
 };
 
-export default Categoria;
+export default HomePage;

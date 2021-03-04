@@ -27,6 +27,112 @@ body {
 }
 
 
+.logoHeader{
+  height: 110px;
+    width: 110px;
+    left: 4px;
+    position: absolute;
+    top: -20px;
+}
+
+.nav-header{
+display: flex;
+justify-content: space-around;
+max-width: 400px;
+margin-left: 150px;
+align-items: center;
+padding-top: 12px;
+}
+
+.nav-header a{
+  color: white;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+a{
+  cursor:pointer;
+}
+.nav-header a:hover{
+  color: black;
+  
+  background: #2859c8;
+
+}
+
+
+
+.buscador-header input{
+  border-radius: 10px;
+  height: 29px;
+  margin-right: -16px;
+  margin-top: -2px;
+  width: 176px;
+}
+.headerMenu{
+  display: none;
+}
+
+.nav-mobile{
+  position: absolute;
+    right: 8px;
+    top: 23px;
+    display: flex;
+}
+.nav-mobile svg{
+  fill: white;
+  cursor: pointer;
+}
+
+.nav-mobile svg{
+  margin-left: 23px;
+  height: 24px;
+}
+.menu-list-mobile{
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+  margin: auto;
+  justify-content: center;
+}
+
+.menu-list-mobile a{
+  color: black;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 720px){
+  .menu-mobile{
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 720px){
+  .nav-header{
+    display: none;
+  }
+  .menu-mobile{
+    display: block;
+  }
+}
+
+.conteud-header{
+  margin: auto;
+  max-width: 1120px !important;
+  height: 80px;
+  position: relative;
+}
+
  a:hover, a:active, a:focus,span:focus,span:active, span:hover{
   outline: none;
  }

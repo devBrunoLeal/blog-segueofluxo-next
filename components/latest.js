@@ -1,58 +1,56 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from 'next/image'
+import Image from "next/image";
 
-const axios = require('axios')
+const axios = require("axios");
 
 export default function Latest({ children, showLatest, titleLatest }) {
+  useEffect(() => {
+    // Atualiza o titulo do documento usando a API do browser
+    getDestaque();
+  }, []);
+  const [alta, setAlta] = useState([]);
+  const [altaDestaque, setAltaDestaque] = useState([]);
 
- 
-useEffect(() => {
-  // Atualiza o titulo do documento usando a API do browser
- getDestaque();
-},[]);
-const [alta, setAlta] = useState([]);
-const [altaDestaque, setAltaDestaque] = useState([]);
+  async function getDestaque() {
+    await axios
+      .get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1&tags=7")
+      .then(
+        (response) => {
+          console.log([response.data[0]]);
 
-async function getDestaque(){
-await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then(
-  (response) => {
-    console.log([response.data[0]])
-  
-   setAltaDestaque([response.data[0]])
-   response.data.splice(0,1)
-   setAlta(response.data);
-
-  
-  },
-  (error) => {
-    alert("erro");
+          setAltaDestaque([response.data[0]]);
+          response.data.splice(0, 1);
+          setAlta(response.data);
+        },
+        (error) => {
+          alert("erro");
+        }
+      );
   }
-);
-}
-
-
-
-  
-
 
   return (
     <section>
       <div className="wrapper">
         <section className="loop col-content">
-          {showLatest? <header className="heading max">
-            
-            {titleLatest? 
-            <h2 className="title title--small title--section">
-              Busca: {titleLatest}  </h2>:
-               <h2 className="title title--small title--section">
-               Noticias 
-             <span className="title__color"> Recentes</span>
-             </h2>
-             }
-          </header>: ''}
+          {showLatest ? (
+            <header className="heading max">
+              {titleLatest ? (
+                <h2 className="title title--small title--section">
+                  Busca: {titleLatest}{" "}
+                </h2>
+              ) : (
+                <h2 className="title title--small title--section">
+                  Noticias
+                  <span className="title__color"> Recentes</span>
+                </h2>
+              )}
+            </header>
+          ) : (
+            ""
+          )}
 
-{/*           <header className="heading max">
+          {/*           <header className="heading max">
             <h2 className="title title--small title--section">Teste</h2>
           </header> */}
           {children}
@@ -62,7 +60,7 @@ await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then
             <h4 className="title title--smaller title--upper tag-latest">
               Acompanhe a SEGUE O FLUXO!
             </h4>
-            <ul style={{display: "flex"}}className="widget__social">
+            <ul style={{ display: "flex" }} className="widget__social">
               <li>
                 <a
                   className=""
@@ -71,7 +69,9 @@ await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then
                   rel="noopener"
                 >
                   <Image
-                    layout="fill"
+                    style={{ objectFit: "contain" }}
+                    height="75px"
+                    width="75px"
                     src="/assets/F.png"
                     alt="Facebook"
                   />
@@ -85,7 +85,8 @@ await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then
                   rel="noopener"
                 >
                   <Image
-                    layout="fill"
+                    height="75px"
+                    width="75px"
                     src="/assets/I.png"
                     alt="Instagram"
                   />
@@ -98,8 +99,9 @@ await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then
                   target="_blank"
                   rel="noopener"
                 >
-                <Image
-                    layout="fill"
+                  <Image
+                    height="75px"
+                    width="75px"
                     src="/assets/T.png"
                     alt="Twitter"
                   />
@@ -113,7 +115,8 @@ await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then
                   rel="noopener"
                 >
                   <Image
-                    layout="fill"
+                    height="75px"
+                    width="75px"
                     src="/assets/Y.png"
                     alt="Twitter"
                   />
@@ -123,8 +126,7 @@ await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then
           </div>
 
           <iframe
-
-            style={{marginTop: "40px"}}
+            style={{ marginTop: "40px" }}
             src="https://open.spotify.com/embed/playlist/0TNsKRkilGp0VQHQY5Z8C1"
             width="300"
             height="380"
@@ -147,34 +149,41 @@ await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then
             </h4>
 
             <ul className="widget__posts">
-            
-            {altaDestaque.map(destaq => (<li key={destaq.id}
-                style={{
-                  backgroundImage: "url("+destaq["better_featured_image"]["source_url"]+")",
-                }} className="widget__posts__item"
-              >
-                <div className="widget__posts__item__description">
-                  <a className="title-cat" href="">
-                   {destaq._embedded["wp:term"][0][0].name}
-                  </a>
-                  <Link  href={"publicacao/"+destaq.id+"/"+destaq.title.rendered}>
-                  <a  className="widget__posts__item__title">{destaq.title.rendered}</a>
-                  </Link>
-                 
-                </div>
-              </li>))}  
-            
-            
-          
-           {alta.map(post => (
-             <li key={post.id} className="widget__posts__item">
+              {altaDestaque.map((destaq) => (
+                <li
+                  key={destaq.id}
+                  style={{
+                    backgroundImage:
+                      "url(" +
+                      destaq["better_featured_image"]["source_url"] +
+                      ")",
+                  }}
+                  className="widget__posts__item"
+                >
+                  <div className="widget__posts__item__description">
+                    <a className="title-cat" href="">
+                      {destaq._embedded["wp:term"][0][0].name}
+                    </a>
+                    <Link
+                      href={
+                        "publicacao/" + destaq.id + "/" + destaq.title.rendered
+                      }
+                    >
+                      <a className="widget__posts__item__title">
+                        {destaq.title.rendered}
+                      </a>
+                    </Link>
+                  </div>
+                </li>
+              ))}
+
+              {alta.map((post) => (
+                <li key={post.id} className="widget__posts__item">
                   <a className="widget__posts__item__title" href="">
-                   {post.title.rendered}
+                    {post.title.rendered}
                   </a>
-                </li> 
-          ))} 
-               
-          
+                </li>
+              ))}
             </ul>
           </div>
         </aside>
