@@ -6,7 +6,15 @@ const background = {
   height: "65px",
   background:
     "linear-gradient(0deg,rgba(2,0,36,1) 0,rgba(40,89,200,1) 0,rgba(22,71,181,1) 100%)",
+  position: 'fixed',
+  top: '0',
+  zIndex: '200'
 };
+
+const backgroundSpace = {
+    width: "100%",
+    height: "65px",
+  };
 
 
 
@@ -39,6 +47,7 @@ export default function Header() {
 
   return (
     <>
+    <div style={backgroundSpace}></div>
       <div style={background}>
         <div style={{ maxWidth: "1120px" }} className="conteud-header">
           <div  className="logoHeader">

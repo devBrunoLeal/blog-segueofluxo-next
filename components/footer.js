@@ -12,6 +12,10 @@ var StyleText = {
     color: "rgb(212, 209, 209)"
 }
 
+var StyleTextFull = {
+    color: "white"
+}
+
 
 var styleBackground = {
     background: "#121214",
@@ -28,8 +32,8 @@ export default function Footer(){
     
      <h2> <footer style={styleBackground}>
     <div style={styleFooter} className="footer-div">
-        <p> © 2021, SEGUE O FLUXO - TODOS OS DIREITOS RESERVADOS. </p>
-        <p> Desenvolvido por <a style={StyleText} href="https://github.com/devBrunoLeal" target="_blank">Bruno Matheus</a> </p>
+        <p style={StyleTextFull}> © 2021, SEGUE O FLUXO - TODOS OS DIREITOS RESERVADOS. </p>
+        <p style={StyleTextFull}> Desenvolvido por <a style={StyleText} href="https://github.com/devBrunoLeal" target="_blank">Bruno Matheus</a> </p>
     </div>
 </footer>
  </h2>

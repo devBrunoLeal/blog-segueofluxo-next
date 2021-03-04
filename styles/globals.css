@@ -6,7 +6,22 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
+.active{
+  color: white !important;
+  background:#2051c0 !important;
+}
+.pagination{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.pagination a{
+  font-size: 15px !important;
+}
+.active a{
+  color: white !important;
+  background:#2051c0 !important;
+}
 a {
   color: inherit;
   text-decoration: none;

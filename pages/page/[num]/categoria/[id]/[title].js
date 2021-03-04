@@ -55,7 +55,7 @@ const Categoria = ({ posts, title, page}) => {
   if (posts) {
     return (
       <>
-      <Header></Header>
+      
         {console.log(posts, page)}
         <div className="main max" id="main" role="main">
           <Head>
@@ -80,7 +80,7 @@ const Categoria = ({ posts, title, page}) => {
          
           </Latest>
         </div>
-        <Footer></Footer>
+        
       </>
     );
   } else {

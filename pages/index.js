@@ -37,6 +37,7 @@ export default function Home() {
  async function getDestaque(){
   await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1&sticky=true&per_page=3&orderby=date").then(
     (response) => {
+      console.log(response);
       return setDestaques(response.data);
     },
     (error) => {
@@ -63,7 +64,7 @@ export default function Home() {
 
   return (
     <>
-      <Header></Header>
+   
 
       <MetaTags>
         <title>FASFSAFS</title>
@@ -88,7 +89,7 @@ export default function Home() {
       </div>
      
        <Latest  showLatest={true}>{posts.map(post => (<Posts key={post.id} noticia={post}></Posts>))}</Latest> 
-      <Footer></Footer>
+   
     </>
   );
 }

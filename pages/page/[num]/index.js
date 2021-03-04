@@ -55,7 +55,7 @@ const HomePage = ({ posts, destaques, title }) => {
   if (posts) {
     return (
       <>
-      <Header></Header>
+      
         {console.log(posts)}
         <div className="main max" id="main" role="main">
           <Head>
@@ -86,7 +86,7 @@ const HomePage = ({ posts, destaques, title }) => {
           {posts.length > 0?  posts.map(post => (<Posts key={post.id} noticia={post}> </Posts>)):<NotFound></NotFound>}
           </Latest>
         </div>
-        <Footer></Footer>
+        
       </>
     );
   } else {
