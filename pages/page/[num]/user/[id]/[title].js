@@ -22,7 +22,7 @@ export const getServerSideProps = async (context) => {
   idFora = id;
   titleFora = context.params.title
   const res = await fetch(
-    `https://api.segueofluxo.com/wp-json/wp/v2/posts?author=${id}&_embed=1&per_page=2&page=${page}`,
+    `https://api.segueofluxo.com/wp-json/wp/v2/posts?author=${id}&_embed=1&per_page=10&page=${page}`,
   );
   const data = await res.json();
   console.log(res);

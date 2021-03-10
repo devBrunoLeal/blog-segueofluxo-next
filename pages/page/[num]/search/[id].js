@@ -9,20 +9,26 @@ import Posts from "../../../../components/posts";
 import NotFound from "../../../../components/notfound";
 const axios = require("axios");
 var ReactSafeHtml = require('react-safe-html');
-
+import ReactPaginate from 'react-paginate';
 
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
   const page = context.params.num
   const res = await fetch(
-    `https://api.segueofluxo.com/wp-json/wp/v2/posts?search=${id}&_embed=1&per_page=2&page=${page}`
+    `https://api.segueofluxo.com/wp-json/wp/v2/posts?search=${id}&_embed=1&per_page=10&page=${page}`
   );
   const data = await res.json();
   console.log(data);
 
   return {
-    props: { posts: data,title:id, page: page },
+    props: { 
+    totalPages:res.headers.get('X-WP-TotalPages'), 
+    totalPost: res.headers.get('X-WP-Total'),
+    posts: data,
+    title:id,
+    id: id,
+    page: page },
   };
 
 }
@@ -39,7 +45,20 @@ export async function getServerSidePaths() {
   };
 }
 
-const Search = ({ posts, title }) => {
+const Search = ({totalPages, totalPost,page, posts, title }) => {
+  
+  const handlePageClick = (data) => {
+    let selected = data.selected;
+
+    selected++;
+    if(selected != page){
+      window.location.href = location.origin+"/page/"+selected+"/search/"+title;
+    }
+  
+  }
+  
+  
+  
   if (posts) {
     return (
       <>
@@ -65,6 +84,7 @@ const Search = ({ posts, title }) => {
 
           <Latest titleLatest={title} showLatest="true">
           {posts.length > 0?  posts.map(post => (<Posts key={post.id} noticia={post}> </Posts>)):<NotFound></NotFound>}
+          <ReactPaginate pageCount={totalPages} initialPage={parseInt(page-1)} containerClassName={'pagination'} activeClassName={'active'}  breakLabel={'...'} breakClassName={'break-me'}  pageRangeDisplayed={4}  onPageChange={handlePageClick} nextLabel={'Próximo'}  previousLabel={'Anterior'} pageCount={totalPages} pageRangeDisplayed={1} marginPagesDisplayed={totalPages}></ReactPaginate>
           </Latest>
         </div>
         

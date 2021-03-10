@@ -10,14 +10,14 @@ import Destaques from "../../../components/destaques"
 import NotFound from "../../../components/notfound";
 const axios = require("axios");
 var ReactSafeHtml = require('react-safe-html');
-
+import ReactPaginate from 'react-paginate';
 
 
 export async function getServerSideProps(context) {
 
   const page = context.params.num
   const res = await fetch(
-    `https://api.segueofluxo.com/wp-json/wp/v2/posts?&_embed=1&per_page=2&page=${page}`
+    `https://api.segueofluxo.com/wp-json/wp/v2/posts?&_embed=1&per_page=10&page=${page}`
   );
   const data = await res.json();
 
@@ -28,7 +28,13 @@ export async function getServerSideProps(context) {
   console.log(data);
 
   return {
-    props: { posts: data,title: 'Postagens', destaques: destaque , page: page },
+    props: {
+      totalPages:res.headers.get('X-WP-TotalPages'), 
+      totalPost: res.headers.get('X-WP-Total'),  
+      posts: data,
+      title: 'Postagens', 
+      destaques: destaque , 
+      page: page },
   };
 
 }
@@ -51,7 +57,19 @@ var destaquesStyle = {
     margin: "auto",
   };
 
-const HomePage = ({ posts, destaques, title }) => {
+const HomePage = ({totalPages, totalPost,page, posts, destaques, title }) => {
+  
+  const handlePageClick = (data) => {
+    let selected = data.selected;
+
+    selected++;
+    if(selected != page){
+      window.location.href = location.origin+"/page/"+selected;
+    }
+  
+  }
+
+  
   if (posts) {
     return (
       <>
@@ -83,7 +101,10 @@ const HomePage = ({ posts, destaques, title }) => {
        </div>
 
           <Latest showLatest="true">
-          {posts.length > 0?  posts.map(post => (<Posts key={post.id} noticia={post}> </Posts>)):<NotFound></NotFound>}
+          {posts.length > 0?  posts.map(post => (
+          <Posts key={post.id} noticia={post}> </Posts>
+          )):<NotFound></NotFound>}
+            <ReactPaginate pageCount={totalPages} initialPage={parseInt(page-1)} containerClassName={'pagination'} activeClassName={'active'}  breakLabel={'...'} breakClassName={'break-me'}  pageRangeDisplayed={4}  onPageChange={handlePageClick} nextLabel={'Próximo'}  previousLabel={'Anterior'} pageCount={totalPages} pageRangeDisplayed={1} marginPagesDisplayed={totalPages}></ReactPaginate>
           </Latest>
         </div>
         

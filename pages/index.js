@@ -8,6 +8,7 @@ import Destaques from "../components/destaques"
 import Footer from "../components/footer";
 import Latest from "../components/latest"
 import Posts from "../components/posts"
+import ReactPaginate from 'react-paginate';
 var sectionStyle = {
   backgroundImage:
     "url(http://segueofluxo-com.umbler.net/upload/18-11-2021-23-18-352146272753_140935941192338_120001703584040028_n.jpg)",
@@ -47,11 +48,13 @@ export default function Home() {
  }
 
  const [posts, setPosts] = useState([]);
+ const [totalPages, setTotalPages] = useState();
 
  async function getPosts(){
-  await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1").then(
+  await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1&per_page=10").then(
     (response) => {
      console.log(response.data)
+     setTotalPages(response.headers["x-wp-totalpages"])
       return setPosts(response.data);
     },
     (error) => {
@@ -59,6 +62,16 @@ export default function Home() {
     }
   );
  }
+
+ const handlePageClick = (data) => {
+  let selected = data.selected;
+
+  selected++;
+  if(selected != 1){
+    window.location.href = location.origin+"/page/"+selected;
+  }
+
+}
   
   
 
@@ -88,7 +101,8 @@ export default function Home() {
       </section>
       </div>
      
-       <Latest  showLatest={true}>{posts.map(post => (<Posts key={post.id} noticia={post}></Posts>))}</Latest> 
+       <Latest  showLatest={true}>{posts.map(post => (<Posts key={post.id} noticia={post}></Posts>))}
+       <ReactPaginate pageCount={totalPages} initialPage={parseInt(0)} containerClassName={'pagination'} activeClassName={'active'}  breakLabel={'...'} breakClassName={'break-me'}  pageRangeDisplayed={4}  onPageChange={handlePageClick} nextLabel={'Próximo'}  previousLabel={'Anterior'} pageCount={totalPages} pageRangeDisplayed={1} marginPagesDisplayed={totalPages}></ReactPaginate></Latest> 
    
     </>
   );
