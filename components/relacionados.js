@@ -50,7 +50,7 @@ export default function Relacionados({ children, showLatest, titleLatest }) {
               <h2 className="title title--medium">
                 <a
                    href={"/publicacao/"+post.id+"/"+post.slug}
-                  >{post.title.rendered}</a>
+                   dangerouslySetInnerHTML={{ __html: post.title.rendered }} ></a>
               </h2>
               <span className="byline">
                 <a className="byline__item" href={"/page/1/user/"+post._embedded.author[0].id+"/"+post._embedded.author[0].slug}

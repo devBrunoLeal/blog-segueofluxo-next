@@ -165,8 +165,8 @@ export default function Latest({ children, showLatest, titleLatest }) {
                       {destaq._embedded["wp:term"][0][0].name}
                     </a>
                    
-                      <a  href={"/publicacao/"+destaq.id+"/"+destaq.slug} className="widget__posts__item__title">
-                        {destaq.title.rendered}
+                      <a dangerouslySetInnerHTML={{ __html: destaq.title.rendered }} href={"/publicacao/"+destaq.id+"/"+destaq.slug} className="widget__posts__item__title">
+                        
                       </a>
                
                   </div>
@@ -175,8 +175,8 @@ export default function Latest({ children, showLatest, titleLatest }) {
 
               {alta.map((post) => (
                 <li key={post.id} className="widget__posts__item">
-                  <a className="widget__posts__item__title" href={"/publicacao/"+post.id+"/"+post.slug}>
-                    {post.title.rendered}
+                  <a dangerouslySetInnerHTML={{ __html: post.title.rendered }} className="widget__posts__item__title" href={"/publicacao/"+post.id+"/"+post.slug}>
+                    
                   </a>
                 </li>
               ))}

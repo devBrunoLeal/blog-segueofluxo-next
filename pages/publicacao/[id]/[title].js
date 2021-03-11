@@ -42,7 +42,7 @@ export async function getServerSidePaths() {
 
 const Publicacao = ({ post }) => {
   
-  
+
   let stringona = '<script type="application/ld+json"> { "@context": "https://schema.org", "@type": "NewsArticle", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://google.com/article" }, "headline": '+'"'+post.title.rendered+'"'+', "image": [ '+'"'+post["better_featured_image"]["source_url"]+'"'+', '+'"'+post["better_featured_image"]["source_url"]+'"'+', '+'"'+post["better_featured_image"]["source_url"]+'"'+' ], "datePublished": '+'"'+post.date+'"'+', "dateModified": '+'"'+post.modified+'"'+', "author": { "@type": "Person", "name": '+'"'+post._embedded.author[0].name+'"'+' }, "publisher": { "@type": "Organization", "name": "Segue o fluxo", "logo": { "@type": "ImageObject", "url": "https://api.segueofluxo.com/wp-content/uploads/2021/02/70871127_822907708123959_3608893476449550336_n.png" } } } </script>'
   
   if (post) {
@@ -66,7 +66,7 @@ const Publicacao = ({ post }) => {
             <meta
               property="og:url"
               content={
-                "https://blog-segueofluxo-next.vercel.app/publicacao/" +
+                "https://segueofluxo.com/publicacao/" +
                 post.id +
                 "/" +
                 post.title.rendered
@@ -86,7 +86,7 @@ const Publicacao = ({ post }) => {
             />
 
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:site" content="@@segueofluxonews" />
+            <meta name="twitter:site" content="@segueofluxonews" />
             <meta name="twitter:title" content={post.title.rendered} />
             <meta name="twitter:creator" content="@segueofluxonews" />
             <meta name="twitter:description" content={post.resumo} />
@@ -104,9 +104,9 @@ const Publicacao = ({ post }) => {
                     <a href={"/page/1/categoria/"+post.categories[0]+"/"+post._embedded["wp:term"][0][0].name} className="title-cat">
                       {post._embedded["wp:term"][0][0].name}
                     </a>
-                    <h1 className="title title--big">{post.title.rendered}</h1>
+                    <h1 className="title title--big" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h1>
                     <div className="sub-titulo">
-                      <p className="sub-titulo">{post.resumo}</p>
+                      <p className="sub-titulo" dangerouslySetInnerHTML={{ __html: post.resumo }}></p>
                     </div>
                     <hr />
                     <span className="byline">
