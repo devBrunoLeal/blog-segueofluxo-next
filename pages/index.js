@@ -93,6 +93,7 @@ export default function Home() {
       property="og:image"
       content="https://api.segueofluxo.com/wp-content/uploads/2021/02/70871127_822907708123959_3608893476449550336_n.png"
     />
+    <meta name="google-site-verification" content="4wWHEX4N9ycRVz2DsqPZnck63Lkw_bOUxNAIJcB6XO4" />
     <meta
       property="og:image:secure_url"
       itemprop="image"

@@ -53,6 +53,7 @@ const Publicacao = ({ post }) => {
         <div className="main max" id="main" role="main">
           <Head>
             <meta charSet="utf-8" />
+            <meta name="google-site-verification" content="4wWHEX4N9ycRVz2DsqPZnck63Lkw_bOUxNAIJcB6XO4" />
             <meta name="language" content="pt-BR" />
             <div  dangerouslySetInnerHTML={{__html: stringona}}></div>
             <title>{post.title.rendered}</title>
