@@ -41,6 +41,9 @@ export async function getServerSidePaths() {
 }
 
 const Publicacao = ({ post }) => {
+  
+  let stringona = '<script type="application/ld+json"> { "@context": "https://schema.org", "@type": "NewsArticle", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://google.com/article" }, "headline": '+'"'+post.title.rendered+'"'+', "image": [ '+'"'+post["better_featured_image"]["source_url"]+'"'+', '+'"'+post["better_featured_image"]["source_url"]+'"'+', '+'"'+post["better_featured_image"]["source_url"]+'"'+' ], "datePublished": '+'"'+post.date+'"'+', "dateModified": '+'"'+post.modified+'"'+', "author": { "@type": "Person", "name": '+'"'+post._embedded.author[0].name+'"'+' }, "publisher": { "@type": "Organization", "name": "Segue o fluxo", "logo": { "@type": "ImageObject", "url": "https://api.segueofluxo.com/wp-content/uploads/2021/02/70871127_822907708123959_3608893476449550336_n.png" } } } </script>'
+  
   if (post) {
     return (
       <>
@@ -50,6 +53,7 @@ const Publicacao = ({ post }) => {
           <Head>
             <meta charSet="utf-8" />
             <meta name="language" content="pt-BR" />
+            <div  dangerouslySetInnerHTML={{__html: stringona}}></div>
             <title>{post.title.rendered}</title>
             <meta name="description" content={post.resumo} />
             <meta name="robots" content="none" />
