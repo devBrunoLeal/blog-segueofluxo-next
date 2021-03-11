@@ -1,9 +1,11 @@
 import { MetaTags } from "react-meta-tags";
 import Head from "next/head";
+import Moment from 'react-moment';
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import Latest from "../../../components/latest";
 import Header from "../../../components/header";
+import Relacionados from "../../../components/relacionados"
 import Footer from "../../../components/footer";
 const axios = require("axios");
 var ReactSafeHtml = require('react-safe-html');
@@ -49,10 +51,10 @@ const Publicacao = ({ post }) => {
             <meta charSet="utf-8" />
             <meta name="language" content="pt-BR" />
             <title>{post.title.rendered}</title>
-            <meta name="description" content={post.title.rendered} />
+            <meta name="description" content={post.resumo} />
             <meta name="robots" content="none" />
             <meta name="author" content={post._embedded.author[0].name} />
-            <meta name="keywords" content="segueofluxo, funk ,noticia" />
+            <meta name="keywords" content={ post._embedded["wp:term"][1].map(tag => (tag.name))} />
             <div id="fb-root"></div>
             <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0" nonce="xF3GKLHk"></script>
             <meta property="og:type" content="page" />
@@ -65,6 +67,7 @@ const Publicacao = ({ post }) => {
                 post.title.rendered
               }
             />
+
             <meta property="og:title" content={post.title.rendered} />
             <meta
               property="og:image"
@@ -78,11 +81,12 @@ const Publicacao = ({ post }) => {
             />
 
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:site" content="@" />
+            <meta name="twitter:site" content="@@segueofluxonews" />
             <meta name="twitter:title" content={post.title.rendered} />
-            <meta name="twitter:creator" content="@" />
-            <meta name="twitter:description" content="" />
+            <meta name="twitter:creator" content="@segueofluxonews" />
+            <meta name="twitter:description" content={post.resumo} />
           </Head>
+
 
           <Latest>
             <main className="main max" id="main" role="main">
@@ -92,7 +96,7 @@ const Publicacao = ({ post }) => {
                   className="content-area col-content"
                 >
                   <header className="heading max">
-                    <a className="title-cat">
+                    <a href={"/page/1/categoria/"+post.categories[0]+"/"+post._embedded["wp:term"][0][0].name} className="title-cat">
                       {post._embedded["wp:term"][0][0].name}
                     </a>
                     <h1 className="title title--big">{post.title.rendered}</h1>
@@ -101,12 +105,13 @@ const Publicacao = ({ post }) => {
                     </div>
                     <hr />
                     <span className="byline">
-                      <a className="byline__item">
+                      <a className="byline__item" href={"/page/1/user/"+post._embedded.author[0].id+"/"+post._embedded.author[0].slug}>
                         <img
                           className="icon"
                           src={post._embedded.author[0].avatar_urls["48"]}
                           alt=""
                         />
+
                         {post._embedded.author[0].name}
                       </a>
                       <span className="byline__item">
@@ -116,17 +121,17 @@ const Publicacao = ({ post }) => {
                           src={"../../assets/timer-svgrepo-com (1).svg"}
                           alt=""
                         />
-                        {post.modified}
+                         <Moment format="DD/MM/YYYY" date={post.date}/> 
                       </span>
                       <div className="share">
                         <b className="share__title">compartilhe:</b>
                         <a
                           className="share__button"
                           href={
-                            "https://www.facebook.com/sharer/sharer.php?u=https://blog-segueofluxo-next.vercel.app/publicacao/" +
+                            "https://www.facebook.com/sharer/sharer.php?u=https://segueofluxo.com/publicacao/" +
                             post.id +
                             "/" +
-                            post.title.rendered
+                            post.slug
                           }
                           target="blank"
                           rel="noopener"
@@ -139,7 +144,10 @@ const Publicacao = ({ post }) => {
                         </a>
                         <a
                           className="share__button"
-                          href="'https://twitter.com/intent/tweet?url='+linkAtual"
+                          href={'https://twitter.com/intent/tweet?url=https://segueofluxo.com/publicacao/'+
+                          post.id +
+                          "/" +
+                          post.slug}
                           target="blank"
                           rel="noopener"
                         >
@@ -151,7 +159,10 @@ const Publicacao = ({ post }) => {
                         </a>
                         <a
                           className="share__button"
-                          href="'https://api.whatsapp.com/send?text='+linkAtual"
+                          href={"https://api.whatsapp.com/send?text=https://segueofluxo.com/publicacao/"+
+                          post.id +
+                          "/" +
+                          post.slug}
                           target="blank"
                           rel="noopener"
                         >
@@ -187,42 +198,53 @@ const Publicacao = ({ post }) => {
                   <footer className="content-area__footer max">
                     <ul className="content-area__tags">
               <li>
-                  {post._embedded["wp:term"][1].map(tag => (tag? <a href={'/page/1/tags/'+tag.id+'/'+tag.slug} rel="tag">{tag.name}</a>:''))}
+                  {post._embedded["wp:term"][1].map(tag => (tag? <a style={{marginRight: '5px'}} href={'/page/1/tags/'+tag.id+'/'+tag.slug} rel="tag">{tag.name}</a>:''))}
                   
                 </li>
               </ul> 
                     <div className="share">
                       <b className="share__title">compartilhe:</b>
                       <a
-                        className="share__button"
-                        href="'https://www.facebook.com/sharer/sharer.php?u='+linkAtual"
-                        target="blank"
-                        rel="noopener"
-                      >
-                        <img
-                          className="icon"
-                          src="../../assets/facebook.png"
-                          alt="Compartilhar no Facebook"
-                        />
-                      </a>
-                      <a
-                        className="share__button"
-                        href="'https://twitter.com/intent/tweet?url='+linkAtual"
-                        target="blank"
-                        rel="noopener"
-                      >
-                        <img
-                          className="icon"
-                          src="../../assets/twitter.png"
-                          alt="Compartilhar no Twitter"
-                        />
-                      </a>
-                      <a
-                        className="share__button"
-                        href="'https://api.whatsapp.com/send?text='+linkAtual"
-                        target="blank"
-                        rel="noopener"
-                      >
+                          className="share__button"
+                          href={
+                            "https://www.facebook.com/sharer/sharer.php?u=https://segueofluxo.com/publicacao/" +
+                            post.id +
+                            "/" +
+                            post.slug
+                          }
+                          target="blank"
+                          rel="noopener"
+                        >
+                          <img
+                            className="icon"
+                            src="../../assets/facebook.png"
+                            alt="Compartilhar no Facebook"
+                          />
+                        </a>
+                        <a
+                          className="share__button"
+                          href={'https://twitter.com/intent/tweet?url=https://segueofluxo.com/publicacao/'+
+                          post.id +
+                          "/" +
+                          post.slug}
+                          target="blank"
+                          rel="noopener"
+                        >
+                          <img
+                            className="icon"
+                            src="../../assets/twitter.png"
+                            alt="Compartilhar no Twitter"
+                          />
+                        </a>
+                        <a
+                          className="share__button"
+                          href={"https://api.whatsapp.com/send?text=https://segueofluxo.com/publicacao/"+
+                          post.id +
+                          "/" +
+                          post.slug}
+                          target="blank"
+                          rel="noopener"
+                        >
                         <img
                           className="icon"
                           src="../../assets/wp.png"
@@ -242,7 +264,7 @@ const Publicacao = ({ post }) => {
                       </span>
                       <div className="author__bio">
                         <b className="title title--smaller">
-                          <a rel="author">{post._embedded.author[0].name}</a>
+                          <a href={"/page/1/user/"+post._embedded.author[0].id+"/"+post._embedded.author[0].slug} rel="author">{post._embedded.author[0].name}</a>
                         </b>
                         {post._embedded.author[0].description}
                         <ul style={{display: 'none'}} className="author__social">
@@ -292,7 +314,7 @@ const Publicacao = ({ post }) => {
                     </h4>
                     <div className="fb-comments" data-href={"https://www.facebook.com/sharer/sharer.php?u=https://segueofluxo.com/publicacao/" + post.id + "/" + post.title.rendered} data-width="730" data-numposts="5"></div>
                   </div>
-
+                  <Relacionados></Relacionados>
                   {/* <div className="related max max--margin-top">
         <h4 className="title title--small title--upper">
           Confira tambémm:

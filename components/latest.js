@@ -161,25 +161,21 @@ export default function Latest({ children, showLatest, titleLatest }) {
                   className="widget__posts__item"
                 >
                   <div className="widget__posts__item__description">
-                    <a className="title-cat" href="">
+                    <a className="title-cat" href={"/page/1/categoria/"+destaq.categories[0]+"/"+destaq._embedded["wp:term"][0][0].name}>
                       {destaq._embedded["wp:term"][0][0].name}
                     </a>
-                    <Link
-                      href={
-                        "publicacao/" + destaq.id + "/" + destaq.title.rendered
-                      }
-                    >
-                      <a className="widget__posts__item__title">
+                   
+                      <a  href={"/publicacao/"+destaq.id+"/"+destaq.slug} className="widget__posts__item__title">
                         {destaq.title.rendered}
                       </a>
-                    </Link>
+               
                   </div>
                 </li>
               ))}
 
               {alta.map((post) => (
                 <li key={post.id} className="widget__posts__item">
-                  <a className="widget__posts__item__title" href="">
+                  <a className="widget__posts__item__title" href={"/publicacao/"+post.id+"/"+post.slug}>
                     {post.title.rendered}
                   </a>
                 </li>

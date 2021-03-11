@@ -1,5 +1,6 @@
 import Link from 'next/link'
-
+import Moment from 'react-moment';
+import Image from "next/image";
 export default function Posts({ noticia }) {
   return (
     <>
@@ -19,7 +20,7 @@ export default function Posts({ noticia }) {
         </div>
         <div className="loop__item__description">
           
-          <a className="title-cat" href="">
+          <a className="title-cat" href={"/page/1/categoria/"+noticia.categories[0]+"/"+noticia._embedded["wp:term"][0][0].name}>
             {noticia._embedded["wp:term"][0][0].name}
           </a>
           <h2 className="title title--medium">
@@ -27,13 +28,16 @@ export default function Posts({ noticia }) {
           </h2>
           <span className="byline">
             <span className="byline__item">
-              <img
-                style={{ maxWidth: "9px", paddingBottom: "4px" }}
-                className="icon"
-                src="assets/timer-svgrepo-com (1).svg"
-                alt=""
-              />
-              {noticia.modified}
+               <Image
+                    style={{ objectFit: "contain",maxWidth: "9px", paddingBottom: "4px", marginRight: '5px'  }}
+                    height="9px"
+                    className="icon"
+                    width="9px"
+                    src="/assets/relogio.png"
+                    alt="Data"
+                  />
+              <Moment style={{marginLeft:'5px'}} format="DD/MM/YYYY" date={noticia.date}/> 
+             
             </span>
           </span>
         </div>

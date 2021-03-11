@@ -79,21 +79,28 @@ export default function Home() {
     <>
    
 
-      <MetaTags>
-        <title>FASFSAFS</title>
-        <meta name="description" content="Some description." />
-        <meta property="og:title" content="MyApp" />
-        <meta property="og:image" content="path/to/image.jpg" />
-      </MetaTags>
+      <Head>
+      <meta charSet="utf-8" />
+    <title>Segue o Fluxo - Um dos maiores portal de noticias sobre Funk.</title>
+    <base href="/" />
 
-      <title>Page 1</title>
-      <meta
-        id="meta-description"
-        name="description"
-        content="Some description."
-      />
-      <meta id="og-title" property="og:title" content="MyApp" />
-      <meta id="og-image" property="og:image" content="path/to/image.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:site_name" content="Segue-o-Fluxo" />
+    <meta property="og:title" content="Segue o fluxo" />
+    <meta property="og:url" content="https://segueofluxo.com" />
+    <meta property="og:description" content="Um dos maiores portal de noticias sobre Funk." />
+    <meta
+      property="og:image"
+      content="https://api.segueofluxo.com/wp-content/uploads/2021/02/70871127_822907708123959_3608893476449550336_n.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      itemprop="image"
+      content="https://api.segueofluxo.com/wp-content/uploads/2021/02/70871127_822907708123959_3608893476449550336_n.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+      </Head>
 
       <div  style={{ maxHeight: "479px", marginTop: '22px'}} className="destaques">
       <section style={destaques} className="featured max">

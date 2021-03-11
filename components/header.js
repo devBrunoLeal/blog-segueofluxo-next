@@ -60,10 +60,10 @@ export default function Header() {
             /></a>
           </div>
           <nav className="nav-header">
-            <a>Inicio</a>
-            <a>Playlist</a>
-            <a>Sobre</a>
-            <a>Contato</a>
+            <a href="/">Inicio</a>
+            <a href="https://open.spotify.com/playlist/0TNsKRkilGp0VQHQY5Z8C1?utm_source=embed_v2&go=1&play=1&nd=1" target="_blank">Playlist</a>
+            <a href="/sobre">Sobre</a>
+            <a href="/contato">Contato</a>
           </nav>
 
           <nav className="nav-mobile">
@@ -81,10 +81,10 @@ export default function Header() {
 
       <div style={menuClick? {display: 'none'}:{display:'block'}} className="headerMenu">
       <nav className="menu-list-mobile">
-            <a>Inicio</a>
-            <a>Playlist</a>
-            <a>Sobre</a>
-            <a>Contato</a>
+            <a href="/">Inicio</a>
+            <a href="https://open.spotify.com/playlist/0TNsKRkilGp0VQHQY5Z8C1?utm_source=embed_v2&go=1&play=1&nd=1" target="_blank">Playlist</a>
+            <a href="/sobre">Sobre</a>
+            <a href="/contato">Contato</a>
           </nav>
       </div>
     </>
