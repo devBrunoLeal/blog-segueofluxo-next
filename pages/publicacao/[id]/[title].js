@@ -89,7 +89,7 @@ const Publicacao = ({ post }) => {
               property="article:author"
               content={post._embedded.author[0].name}
             />
-
+            <meta property="og:image:secure_url" itemprop="image" content={post["better_featured_image"]["source_url"]}/>
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:site" content="@segueofluxonews" />
             <meta name="twitter:title" content={post.title.rendered} />
