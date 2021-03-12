@@ -9,7 +9,7 @@ import Relacionados from "../../../components/relacionados"
 import Footer from "../../../components/footer";
 const axios = require("axios");
 var ReactSafeHtml = require('react-safe-html');
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const id = context.params.id;
   const res = await fetch(
     `https://api.segueofluxo.com/wp-json/wp/v2/posts/${id}?_embed=1`
@@ -22,21 +22,30 @@ export async function getServerSideProps(context) {
   data.resumo = data.resumo.replace(/\n/g, "");
 
   return {
-    props: { post: data },
-  };
+    props: { post: data },revalidate:1
+  }
+  
 
 }
 
-export async function getServerSidePaths() {
+export async function getStaticPaths() {
+  const res = await fetch(
+    `https://api.segueofluxo.com/wp-json/wp/v2/posts`
+  );
+  const data = await res.json();
 
-  const paths =  {
-      params: { id: '1', title: '2' },
-    };
   
+  const paths = data.map(item => ({
+    params: {id: item.id.toString(), title: item.slug}
+  }))
+
+  console.log(paths)
+  /* const paths = [{params: {id: '69', title: 'salvador-da-rima-e-agredido-por-policiais-dentro-de-casa-e-levado-preso'}}]
+   */
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -48,7 +57,7 @@ const Publicacao = ({ post }) => {
   if (post) {
     return (
       <>
-      
+  
         {console.log(post)}
         <div className="main max" id="main" role="main">
           <Head>
