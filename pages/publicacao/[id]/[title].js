@@ -33,13 +33,11 @@ export async function getStaticPaths() {
     `https://api.segueofluxo.com/wp-json/wp/v2/posts`
   );
   const data = await res.json();
-
   
   const paths = data.map(item => ({
     params: {id: item.id.toString(), title: item.slug}
   }))
 
-  console.log(paths)
   /* const paths = [{params: {id: '69', title: 'salvador-da-rima-e-agredido-por-policiais-dentro-de-casa-e-levado-preso'}}]
    */
 
@@ -51,8 +49,7 @@ export async function getStaticPaths() {
 
 const Publicacao = ({ post }) => {
   
-
-  let stringona = '<script type="application/ld+json"> { "@context": "https://schema.org", "@type": "NewsArticle", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://google.com/article" }, "headline": '+'"'+post.title.rendered+'"'+', "image": [ '+'"'+post["better_featured_image"]["source_url"]+'"'+', '+'"'+post["better_featured_image"]["source_url"]+'"'+', '+'"'+post["better_featured_image"]["source_url"]+'"'+' ], "datePublished": '+'"'+post.date+'"'+', "dateModified": '+'"'+post.modified+'"'+', "author": { "@type": "Person", "name": '+'"'+post._embedded.author[0].name+'"'+' }, "publisher": { "@type": "Organization", "name": "Segue o fluxo", "logo": { "@type": "ImageObject", "url": "https://api.segueofluxo.com/wp-content/uploads/2021/02/70871127_822907708123959_3608893476449550336_n.png" } } } </script>'
+ 
   
   if (post) {
     return (
@@ -64,7 +61,7 @@ const Publicacao = ({ post }) => {
             <meta charSet="utf-8" />
             <meta name="google-site-verification" content="4wWHEX4N9ycRVz2DsqPZnck63Lkw_bOUxNAIJcB6XO4" />
             <meta name="language" content="pt-BR" />
-            <div  dangerouslySetInnerHTML={{__html: stringona}}></div>
+            <div  dangerouslySetInnerHTML={{__html: '<script type="application/ld+json"> { "@context": "https://schema.org", "@type": "NewsArticle", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://google.com/article" }, "headline": '+'"'+post.title.rendered+'"'+', "image": [ '+'"'+post["better_featured_image"]["source_url"]+'"'+', '+'"'+post["better_featured_image"]["source_url"]+'"'+', '+'"'+post["better_featured_image"]["source_url"]+'"'+' ], "datePublished": '+'"'+post.date+'"'+', "dateModified": '+'"'+post.modified+'"'+', "author": { "@type": "Person", "name": '+'"'+post._embedded.author[0].name+'"'+' }, "publisher": { "@type": "Organization", "name": "Segue o fluxo", "logo": { "@type": "ImageObject", "url": "https://api.segueofluxo.com/wp-content/uploads/2021/02/70871127_822907708123959_3608893476449550336_n.png" } } } </script>'}}></div>
             <title>{post.title.rendered}</title>
             <meta name="description" content={post.resumo} />
             <meta name="robots" content="none" />
