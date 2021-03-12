@@ -63,10 +63,19 @@ const Publicacao = ({ post }) => {
             <meta name="language" content="pt-BR" />
             <title>{post.title.rendered}</title>
             <meta name="description" content={post.resumo} />
-            <meta name="robots" content="none" />
+            <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
             <meta name="author" content={post._embedded.author[0].name} />
             <meta name="keywords" content={ post._embedded["wp:term"][1].map(tag => (tag.name))} />
-           
+            <meta property="og:site_name" content="Segue o fluxo" />
+            
+            <meta property="article:published_time" content={post.date}/>
+            <meta property="article:modified_time" content={post.modified}/>
+            <meta property="article:publisher" content="https://www.facebook.com/segueofluxooriginal/"/>
+            <meta property="article:author" content={post._embedded.author[0].name}/>
+            <meta property="og:image:width" content="758"/>
+            <meta property="og:image:height" content="424"/>
+
+
             <meta property="og:type" content="page" />
             <meta
               property="og:url"
