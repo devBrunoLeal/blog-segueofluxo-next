@@ -66,8 +66,7 @@ const Publicacao = ({ post }) => {
             <meta name="robots" content="none" />
             <meta name="author" content={post._embedded.author[0].name} />
             <meta name="keywords" content={ post._embedded["wp:term"][1].map(tag => (tag.name))} />
-            <div id="fb-root"></div>
-            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0" nonce="xF3GKLHk"></script>
+           
             <meta property="og:type" content="page" />
             <meta
               property="og:url"
@@ -96,6 +95,8 @@ const Publicacao = ({ post }) => {
             <meta name="twitter:title" content={post.title.rendered} />
             <meta name="twitter:creator" content="@segueofluxonews" />
             <meta name="twitter:description" content={post.resumo} />
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0" nonce="xF3GKLHk"></script>
             <script type="application/ld+json" dangerouslySetInnerHTML={{__html: ' { "@context": "https://schema.org", "@type": "NewsArticle", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://google.com/article" }, "headline": '+'"'+post.title.rendered+'"'+', "image": [ '+'"'+post["better_featured_image"]["source_url"]+'"'+', '+'"'+post["better_featured_image"]["source_url"]+'"'+', '+'"'+post["better_featured_image"]["source_url"]+'"'+' ], "datePublished": '+'"'+post.date+'"'+', "dateModified": '+'"'+post.modified+'"'+', "author": { "@type": "Person", "name": '+'"'+post._embedded.author[0].name+'"'+' }, "publisher": { "@type": "Organization", "name": "Segue o fluxo", "logo": { "@type": "ImageObject", "url": "https://api.segueofluxo.com/wp-content/uploads/2021/02/70871127_822907708123959_3608893476449550336_n.png" } } }'}}></script>
           </Head>
 
