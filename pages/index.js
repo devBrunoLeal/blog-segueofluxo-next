@@ -22,46 +22,25 @@ var destaques = {
 const axios = require('axios')
 
 
+  
 
-export default function Home() {
+
+
+export default function Home({destaque, post, totalPages}) {
   const [Destaque, setDestaques] = useState([]);
 
 
   useEffect(() => {
     // Atualiza o titulo do documento usando a API do browser
 
-   getDestaque();
-   getPosts()
  
   },[]);
   
- async function getDestaque(){
-  await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1&sticky=true&per_page=3&orderby=date").then(
-    (response) => {
-      console.log(response);
-      return setDestaques(response.data);
-    },
-    (error) => {
-      alert("erro");
-    }
-  );
- }
 
- const [posts, setPosts] = useState([]);
- const [totalPages, setTotalPages] = useState();
 
- async function getPosts(){
-  await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1&per_page=10").then(
-    (response) => {
-     console.log(response.data)
-     setTotalPages(response.headers["x-wp-totalpages"])
-      return setPosts(response.data);
-    },
-    (error) => {
-      alert("erro");
-    }
-  );
- }
+
+
+
 
  const handlePageClick = (data) => {
   let selected = data.selected;
@@ -105,13 +84,35 @@ export default function Home() {
 
       <div  style={{ maxHeight: "479px", marginTop: '22px'}} className="destaques">
       <section style={destaques} className="featured max">
-        {Destaque.map((res) => (  <Destaques  res={res} key={res.id}></Destaques>  ))}
+        {destaque.map((res) => (  <Destaques  res={res} key={res.id}></Destaques>  ))}
       </section>
       </div>
      
-       <Latest  showLatest={true}>{posts.map(post => (<Posts key={post.id} noticia={post}></Posts>))}
+       <Latest  showLatest={true}>{post.map(p => (<Posts key={p.id} noticia={p}></Posts>))}
        <ReactPaginate pageCount={totalPages} initialPage={parseInt(0)} containerClassName={'pagination'} activeClassName={'active'}  breakLabel={'...'} breakClassName={'break-me'}  pageRangeDisplayed={4}  onPageChange={handlePageClick} nextLabel={'Próximo'}  previousLabel={'Anterior'} pageCount={totalPages} pageRangeDisplayed={1} marginPagesDisplayed={totalPages}></ReactPaginate></Latest> 
    
     </>
   );
+}
+export const getStaticProps = async () => {
+  const res = await fetch(
+    `https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1&sticky=true&per_page=3&orderby=date`
+  );
+  const data = await res.json();
+
+  
+  let pages;
+  let responsee
+  await axios.get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1&per_page=10").then(
+    (response) => {
+   pages = response.headers["x-wp-totalpages"]
+    responsee = response.data;
+    },
+    (error) => {
+      alert("erro");
+    }
+  );
+  return {
+    props: { destaque: data, post: responsee, totalPages: pages },revalidate:1
+  }
 }
