@@ -56,13 +56,12 @@ export default function Home({destaque, post, totalPages}) {
 
   return (
     <>
-   
-
       <Head>
       <meta charSet="utf-8" />
     <title>Segue o Fluxo - Um dos maiores portal de noticias sobre Funk.</title>
-    <base href="/" />
-
+  <meta property="og:image:secure_url" itemprop="image" content="https://api.segueofluxo.com/wp-content/uploads/2021/02/70871127_822907708123959_3608893476449550336_n.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="pt_BR" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:site_name" content="Segue-o-Fluxo" />
     <meta property="og:title" content="Segue o fluxo" />
@@ -72,6 +71,8 @@ export default function Home({destaque, post, totalPages}) {
       property="og:image"
       content="https://api.segueofluxo.com/wp-content/uploads/2021/02/70871127_822907708123959_3608893476449550336_n.png"
     />
+     <base href="/" />
+    <meta data-react-helmet="true" name="description" content="Segue o fluxo  - Um dos maiores portal de noticias sobre Funk."></meta>
     <meta name="google-site-verification" content="4wWHEX4N9ycRVz2DsqPZnck63Lkw_bOUxNAIJcB6XO4" />
     <meta
       property="og:image:secure_url"
