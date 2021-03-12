@@ -441,7 +441,7 @@ const Publicacao = ({ post }) => {
       </>
     );
   } else {
-    return <h1>Ainda carregando</h1>;
+    return <></>;
   }
 };
 
