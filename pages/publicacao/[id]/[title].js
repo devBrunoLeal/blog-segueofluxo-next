@@ -83,7 +83,7 @@ const Publicacao = ({ post }) => {
                 "https://segueofluxo.com/publicacao/" +
                 post.id +
                 "/" +
-                post.title.rendered
+                post.slug
               }
             />
 
