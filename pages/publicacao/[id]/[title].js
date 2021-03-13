@@ -150,10 +150,10 @@ const Publicacao = ({ post }) => {
                         <a
                           className="share__button"
                           href={
-                            "https://www.facebook.com/sharer/sharer.php?u=https://segueofluxo.com/publicacao/" +
+                            "https://www.facebook.com/sharer.php?display=page&u=https://segueofluxo.com/publicacao/" +
                             post.id +
                             "/" +
-                            post.slug
+                            post.slug+"%3Futm_medium%3Dshare-bar%26utm_source%3Dfacebook"
                           }
                           target="blank"
                           rel="noopener"
@@ -229,10 +229,10 @@ const Publicacao = ({ post }) => {
                       <a
                           className="share__button"
                           href={
-                            "https://www.facebook.com/sharer/sharer.php?u=https://segueofluxo.com/publicacao/" +
+                            "https://www.facebook.com/sharer.php?display=page&u=https://segueofluxo.com/publicacao/" +
                             post.id +
                             "/" +
-                            post.slug
+                            post.slug+"%3Futm_medium%3Dshare-bar%26utm_source%3Dfacebook"
                           }
                           target="blank"
                           rel="noopener"
