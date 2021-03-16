@@ -16,7 +16,6 @@ var sectionStyle = {
 
 var destaques = {
   maxWidth: "1120px",
-  maxHeight: "480px",
   margin: "auto",
 };
 const axios = require('axios')
@@ -83,8 +82,8 @@ export default function Home({destaque, post, totalPages}) {
     <meta property="og:locale" content="pt_BR" />
       </Head>
 
-      <div  style={{ maxHeight: "479px", marginTop: '22px'}} className="destaques">
-      <section style={destaques} className="featured max">
+      <div  style={{ marginTop: '22px'}} className="destaques destaque-home-index">
+      <section style={destaques} className="featured featured-index-home max">
         {destaque.map((res) => (  <Destaques  res={res} key={res.id}></Destaques>  ))}
       </section>
       </div>

@@ -5,7 +5,7 @@ export default function Destaques({res }){
     return (<>
       <article
             className="featured__item"
-            style={{ maxHeight: "479px",backgroundImage: "url(" + res["better_featured_image"]["source_url"] + ")" }}
+            style={{backgroundImage: "url(" + res["better_featured_image"]["source_url"] + ")" }}
           >
             <div className="featured__item__description">
               <a href={"/page/1/categoria/"+res.categories[0]+"/"+res._embedded["wp:term"][0][0].name}  className="title-cat">{res._embedded["wp:term"][0][0].name}</a>

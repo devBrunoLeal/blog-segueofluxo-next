@@ -65,6 +65,18 @@ body {
   background-size: 300px !important;
 }
 
+@media only screen and (min-width: 770px){
+  .featured__item{
+    max-height: 479px !important;
+  }
+  .destaque-home-index{
+    max-height: 479px !important;
+  }
+  .featured-index-home{
+    max-height: 480px !important;
+  }
+}
+
 
 .logoHeader{
   height: 110px;
