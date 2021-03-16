@@ -189,7 +189,7 @@ const Publicacao = ({ post }) => {
                       <li>
                         {post._embedded["wp:term"][1].map((tag) =>
                           tag ? (
-                            <a style={{ marginRight: "5px" }} href={"/page/1/tags/" + tag.id + "/" + tag.slug} rel="tag">
+                            <a style={{ marginRight: "5px", marginTop: "3px" }} href={"/page/1/tags/" + tag.id + "/" + tag.slug} rel="tag">
                               {tag.name}
                             </a>
                           ) : (
