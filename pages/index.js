@@ -63,6 +63,7 @@ export default function Home({destaque, post, totalPages}) {
   <meta property="og:locale" content="pt_BR" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:site_name" content="Segue-o-Fluxo" />
+    <script data-ad-client="ca-pub-5421390053730005" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <meta property="og:title" content="Segue o fluxo" />
     <meta property="og:url" content="https://segueofluxo.com" />
     <meta property="og:description" content="Um dos maiores portal de noticias sobre Funk." />
