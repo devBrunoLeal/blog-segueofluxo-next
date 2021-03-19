@@ -7,9 +7,12 @@ export default function Posts({ noticia }) {
   return (
     <>
       <article className="loop__item" role="article">
+    
         <div className="loop__item__thumb">
        
-          <a  href={"publicacao/"+noticia.id+"/"+noticia.slug}>
+        <div className="block1">
+        <div className="block2">
+        <a  href={"publicacao/"+noticia.id+"/"+noticia.slug}>
             <img
               className="thumb"
               alt={noticia.title.rendered}
@@ -17,7 +20,15 @@ export default function Posts({ noticia }) {
               width="290"
               height="180"
             />
+            
           </a>
+         </div>
+         </div>
+
+       
+       
+
+         
          
         </div>
         <div className="loop__item__description">
