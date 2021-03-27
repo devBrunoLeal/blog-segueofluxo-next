@@ -2796,7 +2796,7 @@ h6,
 strong,
 b {
   font-family: "open_sansbold";
-  font-weight: 400;
+  font-weight: bold;
 }
 @media (max-width: 767px) {
   h1 {
