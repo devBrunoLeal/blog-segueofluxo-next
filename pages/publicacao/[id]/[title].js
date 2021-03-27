@@ -178,7 +178,7 @@ const Publicacao = ({ post }) => {
                     <figure className="wp-block-image size-large">
                       <img loading="lazy" width="758" height="424" src={post["better_featured_image"]["source_url"]} alt="" className="wp-image-100507" sizes="(max-width: 758px) 100vw, 758px" />
                     </figure>
-                    <div
+                    <div className="post-content"
                       dangerouslySetInnerHTML={{
                         __html: post.content.rendered,
                       }}
