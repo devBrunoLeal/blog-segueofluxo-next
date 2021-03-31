@@ -1,8 +1,11 @@
 import Link from 'next/link'
+import {useState} from 'react'
 import Moment from 'react-moment';
 import Image from "next/image";
 export default function Posts({ noticia }) {
-let carregou = false;
+let carregou = true;
+
+
   function gerarResumo(e){
 
   let resumo;
