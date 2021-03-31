@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Moment from 'react-moment';
 import Image from "next/image";
 export default function Posts({ noticia }) {
-
+let carregou = false;
   function gerarResumo(e){
 
   let resumo;
@@ -13,18 +13,20 @@ export default function Posts({ noticia }) {
   resumo = resumo.replace(/\n/g, "");
 
   return resumo;
-
+   
   }
   return (
     <>
-      <article className="loop__item sumir-post-mobile" role="article">
+  
+      <article  className="loop__item sumir-post-mobile" role="article">
     
         <div className="loop__item__thumb">
        
-        <div className="block1">
-        <div className="block2">
+        <div className={carregou? 'block1':''}>
+        <div className={carregou? 'block2':''}>
         <a  href={"publicacao/"+noticia.id+"/"+noticia.slug}>
             <img
+              onload={carregou=true}
               className="thumb"
               alt={noticia.title.rendered}
               src={noticia["better_featured_image"]["source_url"]}
