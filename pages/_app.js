@@ -1,10 +1,18 @@
 import '../styles/globals.css'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import Head from "next/head";
 function MyApp({ Component, pageProps }) {
 
   return (
     <>
+     <Head>
+
+<meta name="msapplication-navbutton-color" content="#1647b5"/>
+<meta name="theme-color" content="#1647b5"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="#1647b5"/>
+     </Head>
     <Header></Header>
    <div className="main max" style={{background: 'white', maxWidth: '1120px', margin: 'auto'}} id="main" role="main">
     <Component {...pageProps} />
