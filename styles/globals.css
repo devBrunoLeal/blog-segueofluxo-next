@@ -18462,6 +18462,7 @@ body.jeg_show_menu {
   position: absolute;
   top: 0;
   bottom: 0;
+  object-fit: cover;
   left: 0;
   width: 100%;
   min-height: 100%;
