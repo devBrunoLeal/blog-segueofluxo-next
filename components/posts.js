@@ -84,19 +84,24 @@ let carregou = true;
 																						sizes="(max-width: 350px) 100vw, 350px"
 																						data-sizes="auto" data-expand="700" data-recalc-dims="1" /></div>
 																			</a>
-																			<div className="jeg_post_category"> <span><a href={"/page/1/categoria/"+noticia.categories[0]+"/"+noticia._embedded["wp:term"][0][0].name} className="category-destaques">{noticia._embedded["wp:term"][0][0].name}</a></span>
+																			<div className="jeg_post_category title-cat"> <span><a style={{fontSize: '16px'}} href={"/page/1/categoria/"+noticia.categories[0]+"/"+noticia._embedded["wp:term"][0][0].name} className="category-destaques">{noticia._embedded["wp:term"][0][0].name}</a></span>
 																			</div>
 																		</div>
-																		<div className="jeg_postblock_content">
-																			<h3 className="jeg_post_title font-bebas font-size"> <a href={"/publicacao/"+noticia.id+"/"+noticia.slug}  dangerouslySetInnerHTML={{ __html: noticia.title.rendered }}></a></h3>
-																			<div dangerouslySetInnerHTML={{ __html: noticia.excerpt.rendered }} className="jeg_post_excerpt post-resumo">
-																			
-																			</div>
-																			<div className="jeg_post_meta">
+                                    <div className="jeg_post_meta">
 																				<div className="jeg_meta_author"><span className="by">by</span> <a style={{color: 'black'}} href={"/page/1/user/" +noticia._embedded.author[0].id + "/" +noticia._embedded.author[0].slug}>{noticia._embedded.author[0].name}</a></div>
 																				<div className="jeg_meta_date"><a href="veja-o-que-aconteceu-com-o-dj-r7.html"><i className="fa fa-clock-o"></i>   <Moment format="DD/MM/YYYY" date={noticia.date}/> </a>
 																				</div>
 																			</div>
+																		<div className="jeg_postblock_content">
+																			<h3 style={{lineHeight: '24px'}} className="jeg_post_title font-bebas font-size"> <a href={"/publicacao/"+noticia.id+"/"+noticia.slug}  dangerouslySetInnerHTML={{ __html: noticia.title.rendered }}></a></h3>
+																			{/* <div dangerouslySetInnerHTML={{ __html: noticia.excerpt.rendered }} className="jeg_post_excerpt post-resumo">
+																			
+																			</div> */}
+																		{/* 	<div className="jeg_post_meta">
+																				<div className="jeg_meta_author"><span className="by">by</span> <a style={{color: 'black'}} href={"/page/1/user/" +noticia._embedded.author[0].id + "/" +noticia._embedded.author[0].slug}>{noticia._embedded.author[0].name}</a></div>
+																				<div className="jeg_meta_date"><a href="veja-o-que-aconteceu-com-o-dj-r7.html"><i className="fa fa-clock-o"></i>   <Moment format="DD/MM/YYYY" date={noticia.date}/> </a>
+																				</div>
+																			</div> */}
 																		</div>
 																	</article>
     </>

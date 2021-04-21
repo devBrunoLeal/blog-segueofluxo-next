@@ -4268,7 +4268,7 @@ button:disabled,
 @media (min-width: 980px) {
   .featured__item:first-child .featured__item__title {
     font-size: 2rem;
-    line-height: 2.4rem;
+    line-height: 2rem;
   }
 }
 @media (min-width: 980px) {
@@ -5152,15 +5152,19 @@ img.emoji {
   .wp-block-cover .wp-block-cover-text,
   .wp-block-cover p {
     font-size: 1.2rem;
-    line-height: 1.6rem;
+    line-height: 2rem;
   }
+}
+
+.title--medium{
+  line-height: 32px !important;
 }
 @media (min-width: 640px) {
   .title--medium,
   .wp-block-cover .wp-block-cover-text,
   .wp-block-cover p {
     font-size: 2rem;
-    line-height: 2.4rem;
+    line-height: 30px !important;
   }
 }
 @media (max-width: 767px) {
@@ -17956,7 +17960,7 @@ body.jeg_show_menu {
   color: inherit;
 }
 .jeg_pl_md_1 {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .jeg_pl_md_1 .jeg_post_title {
   font-size: 16px;

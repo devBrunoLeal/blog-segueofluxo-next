@@ -40,7 +40,7 @@ export default function Latest({ children, showLatest, titleLatest }) {
                   Busca: {titleLatest}{" "}
                 </h2>
               ) : (
-                <h2 className="title font-sabado title--small title--section">
+                <h2 style={{paddingTop: '10px'}} className="title font-sabado title--small title--section">
                   Noticias
                   <span className="title__color"> Recentes</span>
                 </h2>
@@ -126,7 +126,7 @@ export default function Latest({ children, showLatest, titleLatest }) {
           </div>
 
           <iframe
-            style={{ marginTop: "6px" }}
+            style={{ marginTop: "20px" }}
             src="https://open.spotify.com/embed/playlist/0TNsKRkilGp0VQHQY5Z8C1"
             width="300"
             height="380"
