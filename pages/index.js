@@ -84,7 +84,7 @@ export default function Home({destaque, post, totalPages}) {
     <script data-ad-client="ca-pub-5421390053730005" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       </Head>
 
-      <div  style={{ marginTop: '22px'}} className="destaques destaque-home-index">
+      <div  style={{ marginTop: '5px'}} className="destaques destaque-home-index">
       <section style={destaques} className="featured featured-index-home max">
         {destaque.map((res) => (  <Destaques  res={res} key={res.id}></Destaques>  ))}
       </section>

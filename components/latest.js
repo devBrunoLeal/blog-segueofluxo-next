@@ -160,12 +160,14 @@ export default function Latest({ children, showLatest, titleLatest }) {
                   }}
                   className="widget__posts__item"
                 >
-                  <div className="widget__posts__item__description">
+                  <div style={
+                    {fontSize: '20px'}
+                  } className="widget__posts__item__description">
                     <a className="title-cat" href={"/page/1/categoria/"+destaq.categories[0]+"/"+destaq._embedded["wp:term"][0][0].name}>
                       {destaq._embedded["wp:term"][0][0].name}
                     </a>
                    
-                      <a dangerouslySetInnerHTML={{ __html: destaq.title.rendered }} href={"/publicacao/"+destaq.id+"/"+destaq.slug} className="widget__posts__item__title">
+                      <a dangerouslySetInnerHTML={{ __html: destaq.title.rendered }} href={"/publicacao/"+destaq.id+"/"+destaq.slug} className="widget__posts__item__title font-bebas">
                         
                       </a>
                
@@ -173,13 +175,15 @@ export default function Latest({ children, showLatest, titleLatest }) {
                 </li>
               ))}
 
-              {alta.map((post) => (
+               {alta.map((post) => (
                 <li key={post.id} className="widget__posts__item">
-                  <a dangerouslySetInnerHTML={{ __html: post.title.rendered }} className="widget__posts__item__title" href={"/publicacao/"+post.id+"/"+post.slug}>
+                  <a style={
+                    {fontSize: '20px'}
+                  } dangerouslySetInnerHTML={{ __html: post.title.rendered }} className="widget__posts__item__title font-bebas" href={"/publicacao/"+post.id+"/"+post.slug}>
                     
                   </a>
                 </li>
-              ))}
+              ))} 
             </ul>
           </div>
         </aside>

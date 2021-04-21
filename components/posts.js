@@ -52,7 +52,7 @@ let carregou = true;
           <a className="title-cat" href={"/page/1/categoria/"+noticia.categories[0]+"/"+noticia._embedded["wp:term"][0][0].name}>
             {noticia._embedded["wp:term"][0][0].name}
           </a>
-          <h2 className="title title--medium">
+          <h2 className="title font-bebas title--medium">
             <a href={"/publicacao/"+noticia.id+"/"+noticia.slug} dangerouslySetInnerHTML={{ __html: noticia.title.rendered }}></a>
           </h2>
           <span className="byline">
@@ -88,7 +88,7 @@ let carregou = true;
 																			</div>
 																		</div>
 																		<div className="jeg_postblock_content">
-																			<h3 className="jeg_post_title"> <a href={"/publicacao/"+noticia.id+"/"+noticia.slug}  dangerouslySetInnerHTML={{ __html: noticia.title.rendered }}></a></h3>
+																			<h3 className="jeg_post_title font-bebas font-size"> <a href={"/publicacao/"+noticia.id+"/"+noticia.slug}  dangerouslySetInnerHTML={{ __html: noticia.title.rendered }}></a></h3>
 																			<div dangerouslySetInnerHTML={{ __html: noticia.excerpt.rendered }} className="jeg_post_excerpt post-resumo">
 																			
 																			</div>

@@ -11,6 +11,34 @@ body {
   src: url("./sabado.otf") format("opentype");
 }
 
+
+@media only screen and (min-width: 720px){
+  .font-size-publi{
+    font-size: 59px !important;
+    line-height: 48px !important;
+  }
+}
+
+@media only screen and (max-width: 720px){
+  .font-size{
+    font-size: 23px !important;
+  }
+
+  .font-size-publi{
+    font-size: 39px !important;
+    line-height: 36px !important;
+  }
+}
+
+.font-bebas {
+  font-family: Bebas Neue !important;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("./BebasNeue-Regular.ttf") format("opentype");
+}
+
 @font-face {
   font-weight: bold;
   font-family: "Sabado";
@@ -4211,6 +4239,11 @@ button:disabled,
     padding: 30px;
   }
 }
+.title-cat{
+  font-family: 'Bebas Neue' !important;
+  font-size: 16px !important;
+}
+
 .featured__item .title-cat {
   position: relative;
   z-index: 5;
@@ -4342,7 +4375,7 @@ button:disabled,
   display: none;
 }
 .heading {
-  margin-top: 30px;
+  margin-top: 5px;
 }
 .heading .title-cat + .title,
 .heading .wp-block-pullquote .title-cat + p,

@@ -134,7 +134,7 @@ const Publicacao = ({ post }) => {
                     <a href={"/page/1/categoria/" + post.categories[0] + "/" + post._embedded["wp:term"][0][0].name} className="title-cat">
                       {post._embedded["wp:term"][0][0].name}
                     </a>
-                    <h1 className="title title--big" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h1>
+                    <h1 className="title title--big font-bebas font-size-publi" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h1>
                     <div className="sub-titulo">
                       <p className="sub-titulo" dangerouslySetInnerHTML={{ __html: post.resumo }}></p>
                     </div>
