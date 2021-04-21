@@ -57,7 +57,7 @@ export default function Latest({ children, showLatest, titleLatest }) {
         </section>
         <aside className="sidebar col-sidebar" role="complementary">
           <div id="lt_social_widget-5" className="widget widget--social">
-            <h4 className="title tag-latest title--smaller title--upper tag-latest">
+            <h4 className="title tag-latest margin-correct title--smaller title--upper tag-latest">
               Acompanhe a SEGUE O FLUXO!
             </h4>
             <ul style={{ display: "flex" }} className="widget__social">
@@ -126,7 +126,7 @@ export default function Latest({ children, showLatest, titleLatest }) {
           </div>
 
           <iframe
-            style={{ marginTop: "40px" }}
+            style={{ marginTop: "6px" }}
             src="https://open.spotify.com/embed/playlist/0TNsKRkilGp0VQHQY5Z8C1"
             width="300"
             height="380"
@@ -137,14 +137,14 @@ export default function Latest({ children, showLatest, titleLatest }) {
 
           <div
             id="custom_html-3"
-            className="widget_text widget widget_custom_html"
+            className="widget_text margin-correct-top widget widget_custom_html"
           >
             <div className="textwidget custom-html-widget">
               {/*  Anuncio fica aqui */}
             </div>
           </div>
-          <div id="lt_featured_posts_widget-5" className="widget widget--posts">
-            <h4 className="title tag-latest title--smaller title--upper tag-latest">
+          <div id="lt_featured_posts_widget-5" className="widget margin-correct-top widget--posts">
+            <h4 className="title margin-correct tag-latest title--smaller title--upper tag-latest">
               Mais acessadas
             </h4>
 
@@ -174,6 +174,7 @@ export default function Latest({ children, showLatest, titleLatest }) {
                   </div>
                 </li>
               ))}
+
 
                {alta.map((post) => (
                 <li key={post.id} className="widget__posts__item">

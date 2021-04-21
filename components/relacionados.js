@@ -47,7 +47,7 @@ export default function Relacionados({ children, showLatest, titleLatest }) {
             </div>
             <div className="loop__item__description">
               <a className="title-cat" href={"/page/1/categoria/"+post.categories[0]+"/"+post._embedded["wp:term"][0][0].name} > {post._embedded["wp:term"][0][0].name}</a>
-              <h2 className="title title--medium">
+              <h2 className="title title--medium font-bebas">
                 <a
                    href={"/publicacao/"+post.id+"/"+post.slug}
                    dangerouslySetInnerHTML={{ __html: post.title.rendered }} ></a>
