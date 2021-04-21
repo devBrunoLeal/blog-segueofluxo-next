@@ -4268,13 +4268,13 @@ button:disabled,
 @media (min-width: 980px) {
   .featured__item:first-child .featured__item__title {
     font-size: 2rem;
-    line-height: 2rem;
+    line-height: 1.7rem;
   }
 }
 @media (min-width: 980px) {
   .featured__item:nth-child(2) .featured__item__title,.featured__item:nth-child(3) .featured__item__title {
     font-size: 1.6rem;
-    line-height: 2rem;
+    line-height: 1.7rem;
   }
 }
 .featured__item__link {
