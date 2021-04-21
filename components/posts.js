@@ -65,7 +65,7 @@ let carregou = true;
                     src="/assets/relogio.png"
                     alt="Data"
                   />
-              <Moment style={{marginLeft:'5px'}} format="DD/MM/YYYY" date={noticia.date}/> 
+              <Moment style={{marginLeft:'5px', fontSize: '15px', fontWeight: '500', color: '#777676'}} format="DD/MM/YYYY" date={noticia.date}/> 
              
             </span>
           </span>
