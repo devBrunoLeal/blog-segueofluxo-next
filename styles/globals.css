@@ -4050,6 +4050,9 @@ button:disabled,
   .footer {
     text-align: center;
   }
+  .line-spacing{
+    line-height: 21px !important;
+  }
 }
 .widget__posts li+li{
  margin-top: 5px;
