@@ -57,76 +57,119 @@ export default function Latest({ children, showLatest, titleLatest }) {
         </section>
         <aside className="sidebar col-sidebar" role="complementary">
           <div id="lt_social_widget-5" className="widget widget--social">
-            <h4 className="title tag-latest margin-correct title--smaller title--upper tag-latest">
+           {/*  <h4 className="title tag-latest margin-correct title--smaller title--upper tag-latest">
               Acompanhe a SEGUE O FLUXO!
-            </h4>
-            <ul style={{ display: "flex" }} className="widget__social">
-              <li>
+            </h4> */}
+
+            <ul style={{ display: "flex", flexDirection: "column" }} className="widget__social acompanhe-list">
+              <li style={{ background: "#121214"}}>
                 <a
                   className=""
                   href="https://www.facebook.com/segueofluxooriginal"
                   target="_blank"
                   rel="noopener"
                 >
+                  <div  style={{ margin: "auto", justifyContent:'center', display: 'flex', height: '25px' }}>
                   <Image
-                    style={{ objectFit: "contain" }}
-                    height="75px"
-                    width="75px"
-                    src="/assets/F.png"
+                    style={{ objectFit: "contain", paddingRight: '40px !important', marginLeft: '-42px' }}
+                    className="image-list"
+                    height="34px"
+                    width="30px"
+                    src="/assets/facebook.svg"
                     alt="Facebook"
                   />
+                    <p class="font-siga facebook-color">SIGA-NOS NO FACEBOOK</p>
+                  </div>
+                  
                 </a>
               </li>
-              <li>
+              <li style={{ background: "#121214"}}>
                 <a
                   className=""
                   href="https://www.instagram.com/segueofluxooriginal/"
                   target="_blank"
                   rel="noopener"
                 >
+                  <div  style={{ margin: "auto", justifyContent:'center', display: 'flex', height: '25px' }}>
                   <Image
-                    height="75px"
-                    width="75px"
-                    src="/assets/I.png"
-                    alt="Instagram"
+                    style={{ objectFit: "contain", paddingRight: '40px !important', marginLeft: '-42px' }}
+                    className="image-list"
+                    height="34px"
+                    width="30px"
+                    src="/assets/instagram.svg"
+                    alt="instagram"
                   />
+                    <p class="font-siga instagram-color">SIGA-NOS NO INSTAGRAM</p>
+                  </div>
                 </a>
               </li>
-              <li>
+              <li style={{ background: "#121214"}}>
                 <a
                   className=""
                   href="https://twitter.com/segueofluxonews"
                   target="_blank"
                   rel="noopener"
                 >
+                 <div  style={{ margin: "auto", justifyContent:'center', display: 'flex', height: '25px' }}>
                   <Image
-                    height="75px"
-                    width="75px"
-                    src="/assets/T.png"
-                    alt="Twitter"
+                    style={{ objectFit: "contain", paddingRight: '40px !important', marginLeft: '-42px' }}
+                    className="image-list"
+                    height="34px"
+                    width="30px"
+                    src="/assets/twitter.svg"
+                    alt="twitter"
                   />
+                    <p class="font-siga twitter-color">SIGA-NOS NO TWITTER</p>
+                  </div>
                 </a>
               </li>
-              <li>
+              <li style={{ background: "#121214"}}>
                 <a
                   className=""
-                  href="https://www.youtube.com/c/tranemusica/"
+                  href="https://www.youtube.com/c/segueofluxooriginal/"
                   target="_blank"
                   rel="noopener"
                 >
+                 <div  style={{ margin: "auto", justifyContent:'center', display: 'flex', height: '25px' }}>
                   <Image
-                    height="75px"
-                    width="75px"
-                    src="/assets/Y.png"
-                    alt="Twitter"
+                    style={{ objectFit: "contain", paddingRight: '40px !important', marginLeft: '-42px' }}
+                    className="image-list"
+                    height="34px"
+                    width="30px"
+                    src="/assets/youtube.svg"
+                    alt="youtube"
                   />
+                    <p class="font-siga youtube-color">SE INCREVA NO YOUTUBE</p>
+                  </div>
+                
+                </a>
+              </li>
+              <li style={{ background: "#121214"}}>
+                <a
+                  className=""
+                  href="https://open.spotify.com/playlist/0TNsKRkilGp0VQHQY5Z8C1"
+                  target="_blank"
+                  rel="noopener"
+                >
+                 <div  style={{ margin: "auto", justifyContent:'center', display: 'flex', height: '25px' }}>
+                  <Image
+                    style={{ objectFit: "contain", paddingRight: '40px !important', marginLeft: '-42px' }}
+                    className="image-list"
+                    height="34px"
+                    width="30px"
+                    src="/assets/spotify.svg"
+                    alt="spotify"
+                  />
+                    <p class="font-siga spotify-color">SIGA NOSSA PLAYLIST</p>
+                  </div>
+                
                 </a>
               </li>
             </ul>
           </div>
 
           <iframe
-            style={{ marginTop: "20px" }}
+            style={{ marginTop: "5px" }}
             src="https://open.spotify.com/embed/playlist/0TNsKRkilGp0VQHQY5Z8C1"
             width="300"
             height="380"
@@ -163,11 +206,11 @@ export default function Latest({ children, showLatest, titleLatest }) {
                   <div style={
                     {fontSize: '20px'}
                   } className="widget__posts__item__description">
-                    <a className="title-cat" href={"/page/1/categoria/"+destaq.categories[0]+"/"+destaq._embedded["wp:term"][0][0].name}>
+                    <a  className="title-cat" href={"/page/1/categoria/"+destaq.categories[0]+"/"+destaq._embedded["wp:term"][0][0].name}>
                       {destaq._embedded["wp:term"][0][0].name}
                     </a>
                    
-                      <a dangerouslySetInnerHTML={{ __html: destaq.title.rendered }} href={"/publicacao/"+destaq.id+"/"+destaq.slug} className="widget__posts__item__title font-bebas">
+                      <a style={{lineHeight: '19px'}} dangerouslySetInnerHTML={{ __html: destaq.title.rendered }} href={"/publicacao/"+destaq.id+"/"+destaq.slug} className="widget__posts__item__title font-bebas">
                         
                       </a>
                
@@ -176,14 +219,30 @@ export default function Latest({ children, showLatest, titleLatest }) {
               ))}
 
 
-               {alta.map((post) => (
-                <li key={post.id} className="widget__posts__item">
-                  <a style={
-                    {fontSize: '20px'}
-                  } dangerouslySetInnerHTML={{ __html: post.title.rendered }} className="widget__posts__item__title font-bebas" href={"/publicacao/"+post.id+"/"+post.slug}>
-                    
+               {alta.map((destaq) => (
+                <li
+                key={destaq.id}
+                style={{
+                  backgroundImage:
+                    "url(" +
+                    destaq["better_featured_image"]["source_url"] +
+                    ")",
+                }}
+                className="widget__posts__item"
+              >
+                <div style={
+                  {fontSize: '20px'}
+                } className="widget__posts__item__description">
+                  <a  className="title-cat" href={"/page/1/categoria/"+destaq.categories[0]+"/"+destaq._embedded["wp:term"][0][0].name}>
+                    {destaq._embedded["wp:term"][0][0].name}
                   </a>
-                </li>
+                 
+                    <a style={{lineHeight: '19px'}} dangerouslySetInnerHTML={{ __html: destaq.title.rendered }} href={"/publicacao/"+destaq.id+"/"+destaq.slug} className="widget__posts__item__title font-bebas">
+                      
+                    </a>
+             
+                </div>
+              </li>
               ))} 
             </ul>
           </div>
