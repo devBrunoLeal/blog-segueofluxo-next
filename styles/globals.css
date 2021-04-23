@@ -4050,7 +4050,7 @@ button:disabled,
   .footer {
     text-align: center;
   }
-  .line-spacing{
+  .line-spacing {
     line-height: 21px !important;
   }
 }
@@ -5286,10 +5286,9 @@ img.emoji {
   }
 }
 
-.title--medium{
-  line-height: 32px !important;
-}
+
 @media (min-width: 640px) {
+ 
   .title--medium,
   .wp-block-cover .wp-block-cover-text,
   .wp-block-cover p {
@@ -5305,6 +5304,9 @@ img.emoji {
   }
 }
 @media (min-width: 768px) {
+  .title--medium{
+    line-height: 32px !important;
+  }
   .title--big,
   .wp-block-pullquote p {
     font-size: 2.8rem;
