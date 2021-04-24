@@ -169,7 +169,7 @@ export default function Latest({ children, showLatest, titleLatest }) {
           </div>
 
           <iframe
-            style={{ marginTop: "5px" }}
+            style={{ marginTop: "5px", width: '100%' }}
             src="https://open.spotify.com/embed/playlist/0TNsKRkilGp0VQHQY5Z8C1"
             width="300"
             height="380"
