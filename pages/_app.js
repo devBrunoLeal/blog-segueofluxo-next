@@ -14,16 +14,17 @@ function MyApp({ Component, pageProps }) {
 <meta name="apple-mobile-web-app-status-bar-style" content="#1647b5"/>
 
 {/*  Global site tag (gtag.js) - Google Analytics  */}
-<script async src="https://www.googletagmanager.com/gtag/js?id=248420715"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GEFJ9QSZEP"></script>
 
 
   <script
     dangerouslySetInnerHTML={{
       __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '248420715');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-GEFJ9QSZEP');
         `,
     }}
   />
