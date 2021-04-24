@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
 <meta name="apple-mobile-web-app-status-bar-style" content="#1647b5"/>
 
 {/*  Global site tag (gtag.js) - Google Analytics  */}
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=24842071"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){'{'}dataLayer.push(arguments){'}'}
