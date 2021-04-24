@@ -29,7 +29,7 @@ let carregou = true;
         <div className={carregou? 'block2':''}>
         <a  href={"publicacao/"+noticia.id+"/"+noticia.slug}>
             <img
-              onload={carregou=true}
+           
               className="thumb"
               alt={noticia.title.rendered}
               src={noticia["better_featured_image"]["source_url"]}
@@ -54,7 +54,10 @@ let carregou = true;
           </a>
           <h2 className="title font-bebas title--medium">
             <a href={"/publicacao/"+noticia.id+"/"+noticia.slug} dangerouslySetInnerHTML={{ __html: noticia.title.rendered }}></a>
+            <div style={{marginTop: '-2px', fontFamily: "'Times new romanArial'", color:'#605d5d'}} dangerouslySetInnerHTML={{ __html: noticia.excerpt.rendered }} className="jeg_post_excerpt post-resumo">
+            </div>
           </h2>
+
           <span className="byline">
             <span className="byline__item">
                <Image
