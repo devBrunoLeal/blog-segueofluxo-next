@@ -15,13 +15,18 @@ function MyApp({ Component, pageProps }) {
 
 {/*  Global site tag (gtag.js) - Google Analytics  */}
 <script async src="https://www.googletagmanager.com/gtag/js?id=24842071"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){'{'}dataLayer.push(arguments){'}'}
-  gtag('js', new Date());
 
-  gtag('config', 'GA_MEASUREMENT_ID');
-</script>
+
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '[Tracking ID]');
+        `,
+    }}
+  />
      </Head>
     <Header></Header>
    <div className="main max" style={{background: 'white', maxWidth: '1120px', margin: 'auto'}} id="main" role="main">
