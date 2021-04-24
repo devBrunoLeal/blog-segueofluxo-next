@@ -4,7 +4,7 @@ import Image from "next/image";
 var styleFooter = {
   maxWidth: "1020px",
   margin: "auto",
-  padding: "0px 22px",
+  padding: "50px 22px",
   fontSize: "16px",
   display: "flex",
   justifyContent: "space-between",
