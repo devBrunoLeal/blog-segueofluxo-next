@@ -29,6 +29,10 @@ body {
     margin-top: 4px;
   }
 
+  .redes-footer .font-bebas{
+    margin-bottom: 8px !important;
+  }
+
   .font-size-publi{
     font-size: 39px !important;
     line-height: 36px !important;
@@ -4366,7 +4370,9 @@ button:disabled,
   .footer-div{
    
     flex-direction: column !important;
-    height: 200px !important;
+
+    height: 77px!important;
+    padding-top: 14px !important;
   }
   .footer-div  .font-bebas{
     font-size: 17px !important;
@@ -4379,7 +4385,7 @@ button:disabled,
 }
 
 .footer-div{
-  padding-top: 43px !important;
+  padding-top: 43px;
   height: 132px;
 }
 .ul-footer li{
