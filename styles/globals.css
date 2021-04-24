@@ -24,6 +24,10 @@ body {
     font-size: 23px !important;
   }
 
+  .widget__social li .font-siga{
+    margin-right: 35px;
+  }
+
   .font-size-publi{
     font-size: 39px !important;
     line-height: 36px !important;
