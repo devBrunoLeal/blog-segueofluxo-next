@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
 <meta name="apple-mobile-web-app-status-bar-style" content="#1647b5"/>
 
 {/*  Global site tag (gtag.js) - Google Analytics  */}
-<script async src="https://www.googletagmanager.com/gtag/js?id=24842071"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=248420715"></script>
 
 
   <script
@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '24842071');
+            gtag('config', '248420715');
         `,
     }}
   />
