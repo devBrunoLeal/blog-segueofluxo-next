@@ -92,7 +92,14 @@ let carregou = true;
 																		</div>
                                     <div className="jeg_post_meta">
 																				<div className="jeg_meta_author"><span className="by">by</span> <a style={{color: 'black'}} href={"/page/1/user/" +noticia._embedded.author[0].id + "/" +noticia._embedded.author[0].slug}>{noticia._embedded.author[0].name}</a></div>
-																				<div className="jeg_meta_date"><a href="veja-o-que-aconteceu-com-o-dj-r7.html"><i className="fa fa-clock-o"></i>   <Moment format="DD/MM/YYYY" date={noticia.date}/> </a>
+																				<div className="jeg_meta_date"><a href="veja-o-que-aconteceu-com-o-dj-r7.html"><i><Image
+                    style={{ objectFit: "contain",maxWidth: "9px", paddingBottom: "4px", marginRight: '5px'  }}
+                    height="9px"
+                    className="icon"
+                    width="9px"
+                    src="/assets/relogio.png"
+                    alt="Data"
+                  /></i>   <Moment format="DD/MM/YYYY" date={noticia.date}/> </a>
 																				</div>
 																			</div>
 																		<div className="jeg_postblock_content">
