@@ -4371,8 +4371,12 @@ button:disabled,
    
     flex-direction: column !important;
 
-    height: 77px!important;
+    height: 115px!important;
     padding-top: 14px !important;
+  }
+
+  .ul-footer{
+    margin-bottom: 22px !important;
   }
   .footer-div  .font-bebas{
     font-size: 17px !important;
