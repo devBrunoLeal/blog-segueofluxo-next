@@ -97,8 +97,7 @@ const Categoria = ({ totalPages, totalPost, page, posts, title, id }) => {
               breakClassName={"break-me"}
               pageRangeDisplayed={4}
               onPageChange={handlePageClick}
-              nextLabel={"Próximo"}
-              previousLabel={"Anterior"}
+              nextLabel={'►'}  previousLabel={'◄'}
               pageCount={totalPages}
               pageRangeDisplayed={1}
               marginPagesDisplayed={totalPages}

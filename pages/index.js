@@ -91,7 +91,7 @@ export default function Home({destaque, post, totalPages}) {
       </div>
      
        <Latest  showLatest={true}>{post.map(p => (<Posts key={p.id} noticia={p}></Posts>))}
-       <ReactPaginate pageCount={totalPages} initialPage={parseInt(0)} containerClassName={'pagination'} activeClassName={'active'}  breakLabel={'...'} breakClassName={'break-me'}  pageRangeDisplayed={4}  onPageChange={handlePageClick} nextLabel={'Próximo'}  previousLabel={'Anterior'} pageCount={totalPages} pageRangeDisplayed={1} marginPagesDisplayed={totalPages}></ReactPaginate></Latest> 
+       <ReactPaginate pageCount={totalPages} initialPage={parseInt(0)} containerClassName={'pagination'} activeClassName={'active'}  breakLabel={'...'} breakClassName={'break-me'}  pageRangeDisplayed={4}  onPageChange={handlePageClick} nextLabel={'►'}  previousLabel={'◄'} pageCount={totalPages} pageRangeDisplayed={1} marginPagesDisplayed={totalPages}></ReactPaginate></Latest> 
    
     </>
   );

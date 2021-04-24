@@ -89,7 +89,7 @@ const User = ({totalPages, totalPost, page, posts, title,id }) => {
 
           <Latest titleLatest={title} showLatest={true}>
           {posts.length > 0?  posts.map(post => (<Posts key={post.id} noticia={post}> </Posts>)):<NotFound></NotFound>}
-          <ReactPaginate pageCount={totalPages} initialPage={parseInt(page-1)} containerClassName={'pagination'} activeClassName={'active'}  breakLabel={'...'} breakClassName={'break-me'}  pageRangeDisplayed={4}  onPageChange={handlePageClick} nextLabel={'Próximo'}  previousLabel={'Anterior'} pageCount={totalPages} pageRangeDisplayed={1} marginPagesDisplayed={totalPages}></ReactPaginate>
+          <ReactPaginate pageCount={totalPages} initialPage={parseInt(page-1)} containerClassName={'pagination'} activeClassName={'active'}  breakLabel={'...'} breakClassName={'break-me'}  pageRangeDisplayed={4}  onPageChange={handlePageClick} nextLabel={'►'}  previousLabel={'◄'} pageCount={totalPages} pageRangeDisplayed={1} marginPagesDisplayed={totalPages}></ReactPaginate>
           </Latest> 
         </div>
         
