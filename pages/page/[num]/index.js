@@ -12,7 +12,53 @@ const axios = require("axios");
 var ReactSafeHtml = require("react-safe-html");
 import ReactPaginate from "react-paginate";
 
-export async function getServerSideProps(context) {
+
+export async function getStaticProps(context) {
+  const page = context.params.num;
+  const res = await fetch(
+    `https://api.segueofluxo.com/wp-json/wp/v2/posts?&_embed=1&per_page=10&page=${page}`
+  );
+  const data = await res.json();
+
+  const destaques = await fetch(
+    "https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1&sticky=true&per_page=3&orderby=date"
+  );
+  const destaque = await destaques.json();
+
+  console.log(data);
+
+  return {
+    props: {
+      totalPages: res.headers.get("X-WP-TotalPages"),
+      totalPost: res.headers.get("X-WP-Total"),
+      posts: data,
+      title: "Postagens",
+      destaques: destaque,
+      page: page,
+    },
+    revalidate: 1,
+  };
+}
+
+export async function getStaticPaths() {
+  const res = await fetch(`https://api.segueofluxo.com/wp-json/wp/v2/posts`);
+  const data = await res.json();
+ let numm = 0; 
+   const paths = data.map((item) => ({
+    params: { num: (numm+1).toString()},
+  })); 
+
+   /* const paths = [{params: { num: '2'}}] */
+   
+
+  return {
+    paths,
+    fallback: true,
+  };
+}
+
+
+/* export async function getServerSideProps(context) {
   const page = context.params.num;
   const res = await fetch(
     `https://api.segueofluxo.com/wp-json/wp/v2/posts?&_embed=1&per_page=10&page=${page}`
@@ -48,6 +94,7 @@ export async function getServerSidePaths() {
     fallback: false,
   };
 }
+ */
 
 var destaquesStyle = {
   maxWidth: "1120px",
