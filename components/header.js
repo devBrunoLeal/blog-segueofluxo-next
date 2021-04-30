@@ -79,8 +79,28 @@ export default function Header() {
         </div>
       </div>
 
-      <div style={menuClick? {display: 'none'}:{display:'block'}} className="headerMenu">
-      <nav className="menu-list-mobile">
+      <div >
+      
+      <nav className={menuClick? 'menu-list-mobile menu-list-hide':'menu-list-mobile menu-list-show'}>
+        <div className="logo-and-close">
+          <div style={{marginTop: '-20px'}}> 
+          <a style={{border: 'none'}} href="/">
+            <Image
+              
+              height="130px"
+              width="130px"
+              src="/assets/avatarfluxo.png"
+              alt="Logo segue o fluxo"
+            /></a>
+          </div>
+          <button onClick={clickMenu}>X</button>
+          <div>
+
+          </div>
+        </div>
+        <div className="pesquisador-header">
+        <input style={{height: '45px'}} onKeyDown={textSearch} placeholder="Faça sua busca..."></input>
+        </div>
             <a href="/">Inicio</a>
             <a href="https://open.spotify.com/playlist/0TNsKRkilGp0VQHQY5Z8C1?utm_source=embed_v2&go=1&play=1&nd=1" target="_blank">Playlist</a>
             <a href="/sobre">Sobre</a>
