@@ -81,7 +81,7 @@ export default function Home({destaque, post, totalPages}) {
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
-    <script data-ad-client="ca-pub-5421390053730005" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+   
       </Head>
 
       <div  style={{ marginTop: '5px'}} className="destaques destaque-home-index">

@@ -141,7 +141,7 @@ const HomePage = ({ totalPages, totalPost, page, posts, destaques, title }) => {
           </Head>
 
           <div style={{ maxHeight: "479px", marginTop: "22px" }} className="destaques">
-            <section style={destaquesStyle} className="featured max">
+            <section style={destaquesStyle} className="featured featured-index-home max">
               {destaques.map((res) => (
                 <Destaques res={res} key={res.id}></Destaques>
               ))}

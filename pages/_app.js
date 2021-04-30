@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
 {/*  Global site tag (gtag.js) - Google Analytics  */}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEFJ9QSZEP"></script>
 
-
+<script data-ad-client="ca-pub-5421390053730005" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script
     dangerouslySetInnerHTML={{
       __html: `
