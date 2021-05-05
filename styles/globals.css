@@ -278,10 +278,14 @@ a{
     padding-top: 84px !important;
 }
 .menu-list-hide{
- display: none;
   transform: translate3d(-100%,0,0);
 }
 
+@media only screen and (min-width: 720px){
+  .menu-list-hide{
+    display: none;
+   }
+}
 .menu-list-show{
   transform: translateZ(0);
 }
