@@ -32,6 +32,7 @@ export default function Footer() {
       <h2>
         {" "}
         <footer style={styleBackground}>
+        <Image className="image-li-footer" height="25%" width="25%" src="/assets/spotify.svg" alt="Spotify" />
           <div style={styleFooter} className="footer-div">
             <div className="redes-footer">
               <ul className="ul-footer">
