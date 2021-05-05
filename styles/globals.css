@@ -277,6 +277,7 @@ a{
     padding-top: 84px !important;
 }
 .menu-list-hide{
+ display: none;
   transform: translate3d(-100%,0,0);
 }
 
