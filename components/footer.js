@@ -34,35 +34,34 @@ export default function Footer() {
         <footer style={styleBackground}>
           <div style={styleFooter} className="footer-div">
             <div className="redes-footer">
-            <Image className="image-li-footer" height="25px" width="25px" src="/assets/spotify.svg" alt="Spotify" />
               <ul className="ul-footer">
-            
-                 
+                <li>
+                  <a target="_blank"   href="https://open.spotify.com/playlist/0TNsKRkilGp0VQHQY5Z8C1">
                 
-                    <Image className="image-li-footer" height="25px" width="25px" src="/assets/spotify.svg" alt="Spotify" />
-                
-       
+                    <Image className="image-li-footer" height="25%" width="25%" src="/assets/spotify.png" alt="Spotify" />
+                  </a>
+                </li>
                 <li>
                   <a target="_blank" href="https://www.instagram.com/segueofluxooriginal/">
                    
-                    <Image className="image-li-footer" style={{ objectFit: "contain" }} height="25%" width="25%" src="/assets/instagram.svg" alt="Instagram" />
+                    <Image className="image-li-footer" style={{ objectFit: "contain" }} height="25%" width="25%" src="/assets/instagram.png" alt="Instagram" />
                   </a>
                 </li>
                 <li>
                   <a target="_blank" href="https://www.youtube.com/segueofluxooriginal">
-                    <Image className="image-li-footer" style={{ objectFit: "contain" }} height="25%" width="25%" src="/assets/youtube.svg" alt="Youtube" />
+                    <Image className="image-li-footer" style={{ objectFit: "contain" }} height="25%" width="25%" src="/assets/youtube.png" alt="Youtube" />
                   </a>
                 </li>
                 <li>
                   <a target="_blank" href="https://www.facebook.com/segueofluxooriginal">
             
-                    <Image className="image-li-footer" style={{ objectFit: "contain" }} height="25%" width="25%" src="/assets/facebook.svg" alt="Facebook" />
+                    <Image className="image-li-footer" style={{ objectFit: "contain" }} height="25%" width="25%" src="/assets/facebook.png" alt="Facebook" />
                   </a>
                 </li>
                 <li>
                   <a target="_blank" href="https://twitter.com/segueofluxonews">
           
-                    <Image className="image-li-footer" style={{ objectFit: "contain" }} height="25%" width="25%" src="/assets/twitter.svg" alt="twitter" />
+                    <Image className="image-li-footer" style={{ objectFit: "contain" }} height="25%" width="25%" src="/assets/twitter.png" alt="twitter" />
                   </a>
                 </li>
               </ul>
