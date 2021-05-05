@@ -41,7 +41,7 @@ export default function Footer() {
               <ul className="ul-footer">
                 <li>
                   <a target="_blank"   href="https://open.spotify.com/playlist/0TNsKRkilGp0VQHQY5Z8C1">
-                
+                  <img src="https://api.segueofluxo.com/wp-content/uploads/2021/05/spotify.png"></img>
                     <Image className="image-li-footer" height="25%" width="25%" src="/assets/spotify.svg" alt="Spotify" />
                   </a>
                 </li>
