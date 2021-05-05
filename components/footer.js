@@ -31,8 +31,11 @@ export default function Footer() {
     <>
       <h2>
         {" "}
-        <footer style={styleBackground}>
+        <div style={{background: 'black'}}>
         <Image className="image-li-footer" height="25%" width="25%" src="/assets/spotify.svg" alt="Spotify" />
+        </div>
+        <footer style={styleBackground}>
+       
           <div style={styleFooter} className="footer-div">
             <div className="redes-footer">
               <ul className="ul-footer">
