@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import MetaTags from "react-meta-tags";
