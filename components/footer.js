@@ -34,13 +34,14 @@ export default function Footer() {
         <footer style={styleBackground}>
           <div style={styleFooter} className="footer-div">
             <div className="redes-footer">
+            <Image className="image-li-footer" height="25px" width="25px" src="/assets/spotify.svg" alt="Spotify" />
               <ul className="ul-footer">
-                <li>
+            
                  
                 
                     <Image className="image-li-footer" height="25px" width="25px" src="/assets/spotify.svg" alt="Spotify" />
                 
-                </li>
+       
                 <li>
                   <a target="_blank" href="https://www.instagram.com/segueofluxooriginal/">
                    
