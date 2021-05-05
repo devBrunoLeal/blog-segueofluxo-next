@@ -4403,17 +4403,9 @@ button:disabled,
 }
 
 .image-li-footer{
-  content: "";
-    display: block;
-    width: 34px;
-    height: 30px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    background-position: 50%;
-    background-size: contain;
-    background-repeat: no-repeat;
+  object-fit: contain;
+  width: 27px;
+  height: 31px;
 }
 
 @media only screen and (max-width: 730px){
@@ -4444,7 +4436,9 @@ button:disabled,
 }
 .ul-footer li{
   display: inline;
-  margin-right: 35px;
+  img{
+    margin-right: 35px;
+  }
 }
 
 .acompanhe-list li{

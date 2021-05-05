@@ -31,9 +31,6 @@ export default function Footer() {
     <>
       <h2>
         {" "}
-        <div style={{background: 'black'}}>
-        <Image className="image-li-footer" height="25%" width="25%" src="/assets/spotify.svg" alt="Spotify" />
-        </div>
         <footer style={styleBackground}>
        
           <div style={styleFooter} className="footer-div">
@@ -41,31 +38,27 @@ export default function Footer() {
               <ul className="ul-footer">
                 <li>
                   <a target="_blank"   href="https://open.spotify.com/playlist/0TNsKRkilGp0VQHQY5Z8C1">
-                  <img src="https://api.segueofluxo.com/wp-content/uploads/2021/05/spotify.png"></img>
-                    <Image className="image-li-footer" height="25%" width="25%" src="/assets/spotify.svg" alt="Spotify" />
+                  <img className="image-li-footer" alt="Spotify"  height="25%" width="25%" src="https://api.segueofluxo.com/wp-content/uploads/2021/05/spotify.png"></img>
                   </a>
                 </li>
                 <li>
                   <a target="_blank" href="https://www.instagram.com/segueofluxooriginal/">
-                   
-                    <Image className="image-li-footer" style={{ objectFit: "contain" }} height="25%" width="25%" src="/assets/instagram.svg" alt="Instagram" />
+                  <img className="image-li-footer" alt="Instagram"  height="25%" width="25%" src="https://api.segueofluxo.com/wp-content/uploads/2021/05/instagram.png"></img>
                   </a>
                 </li>
                 <li>
                   <a target="_blank" href="https://www.youtube.com/segueofluxooriginal">
-                    <Image className="image-li-footer" style={{ objectFit: "contain" }} height="25%" width="25%" src="/assets/youtube.svg" alt="Youtube" />
+                  <img className="image-li-footer" alt="Youtube"  height="25%" width="25%" src="https://api.segueofluxo.com/wp-content/uploads/2021/05/youtube.png"></img>
                   </a>
                 </li>
                 <li>
                   <a target="_blank" href="https://www.facebook.com/segueofluxooriginal">
-            
-                    <Image className="image-li-footer" style={{ objectFit: "contain" }} height="25%" width="25%" src="/assets/facebook.svg" alt="Facebook" />
+                  <img className="image-li-footer" alt="Facebook"  height="25%" width="25%" src="https://api.segueofluxo.com/wp-content/uploads/2021/05/facebook1.png"></img>
                   </a>
                 </li>
                 <li>
                   <a target="_blank" href="https://twitter.com/segueofluxonews">
-          
-                    <Image className="image-li-footer" style={{ objectFit: "contain" }} height="25%" width="25%" src="/assets/twitter.svg" alt="twitter" />
+                  <img className="image-li-footer" alt="Twitter"  height="25%" width="25%" src="https://api.segueofluxo.com/wp-content/uploads/2021/05/twitter1.png"></img>
                   </a>
                 </li>
               </ul>
