@@ -186,7 +186,7 @@ const Publicacao = ({ post }) => {
                   </article>
                   <footer className="content-area__footer max">
                     <ul className="content-area__tags">
-                      <li>
+                     {/*  <li>
                         {post._embedded["wp:term"][1].map((tag) =>
                           tag ? (
                             <a style={{ marginRight: "5px", marginTop: "3px" }} href={"/page/1/tags/" + tag.id + "/" + tag.slug} rel="tag">
@@ -196,7 +196,7 @@ const Publicacao = ({ post }) => {
                             ""
                           )
                         )}
-                      </li>
+                      </li> */}
                     </ul>
                     <div className="share">
                       <b className="share__title">compartilhe:</b>
