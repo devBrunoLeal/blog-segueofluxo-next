@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Destaques({res }){
     return (<>
       <article
-            className="featured__item effect-zoom"
+            className="featured__item featured-desktop effect-zoom"
             style={{backgroundImage: "url(" + res["better_featured_image"]["source_url"] + ")" }}
           >
             <div className="featured__item__description">

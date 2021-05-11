@@ -4406,6 +4406,15 @@ button:disabled,
   height: 28px;
 }
 
+
+@media only screen and (min-width: 730px){
+  .featured-desktop{
+    border-radius: 25px;
+    border: 5px solid #2152c1;
+  }
+}
+
+
 @media only screen and (max-width: 730px){
   .footer-div{
    
