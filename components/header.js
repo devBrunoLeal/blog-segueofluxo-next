@@ -18,9 +18,12 @@ const backgroundSpace = {
 export default function Header() {
   const [menuClick, setMenuClick] = useState(true);
   function clickMenu(e) {
+    let body = document.querySelector('body');
     if (menuClick) {
+      body.classList.add('menu-show-hidden')
       setMenuClick(false);
     } else {
+      body.classList.remove('menu-show-hidden')
       setMenuClick(true);
     }
   }
@@ -143,6 +146,7 @@ export default function Header() {
             </div>
           </div>
         </nav>
+        {menuClick? null:(<div class="overlay-background"></div>)}
       </div>
     </>
   );

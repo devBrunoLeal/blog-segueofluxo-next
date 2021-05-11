@@ -278,9 +278,9 @@ a{
     flex-direction: column;
     position: fixed;
     top: 0;
+    z-index: 10000;
     bottom: 0;
     background: #2051c0;
-    z-index: 300;
     width: 100%;
     /* right: 0; */
     padding: 20px;
@@ -483,6 +483,26 @@ body {
   width: 100%;
   min-width: 300px;
 }
+
+.menu-show-hidden{
+  overflow: hidden;
+}
+
+.overlay-background{
+  background: #fff;
+  opacity: .7;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  pointer-events: visible;
+}
+
+
 .wp-block-button__link {
   color: #fff;
   background-color: #32373c;
