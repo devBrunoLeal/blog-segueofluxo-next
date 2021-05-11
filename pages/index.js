@@ -15,7 +15,7 @@ var sectionStyle = {
 };
 
 var destaques = {
-  maxWidth: "1120px",
+  maxWidth: "1092px",
   margin: "auto",
 };
 const axios = require('axios')

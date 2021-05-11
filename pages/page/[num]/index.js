@@ -97,7 +97,7 @@ export async function getServerSidePaths() {
  */
 
 var destaquesStyle = {
-  maxWidth: "1120px",
+  maxWidth: "1092px",
   maxHeight: "480px",
   margin: "auto",
 };
@@ -177,7 +177,7 @@ const HomePage = ({ totalPages, totalPost, page, posts, destaques, title }) => {
       </>
     );
   } else {
-    return <h1>Ainda carregando</h1>;
+    return <h1></h1>;
   }
 };
 
