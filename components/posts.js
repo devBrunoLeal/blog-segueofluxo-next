@@ -28,7 +28,8 @@ let carregou = true;
         <div className={carregou? '':''}>
         <div className={carregou? '':''}>
         <a  href={"publicacao/"+noticia.id+"/"+noticia.slug}>
-            <img
+        <div class="zoom-post">
+        <img
               style={{ borderRadius: '17px'}}
               className="thumb image-post-list"
               alt={noticia.title.rendered}
@@ -36,6 +37,8 @@ let carregou = true;
               width="290"
               height="180"
             />
+        </div>
+          
             
           </a>
          </div>
