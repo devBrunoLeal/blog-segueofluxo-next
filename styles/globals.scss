@@ -218,11 +218,24 @@ a{
 }
 .nav-header a:hover{
   color: black;
-  
   background: #2859c8;
-
 }
 
+/* .image-post-list{
+  max-width: 100%;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.image-post-list:hover{
+
+  height: 180px !important;
+  width: 280px !important;
+  -moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+} */
 
 
 .buscador-header input{
@@ -4410,7 +4423,7 @@ button:disabled,
 @media only screen and (min-width: 730px){
   .featured-desktop{
     border-radius: 25px;
-    border: 5px solid #2152c1;
+    /* border: 5px solid #2152c1; */
   }
 }
 

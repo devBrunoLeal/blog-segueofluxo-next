@@ -26,11 +26,11 @@ let carregou = true;
         <div className="loop__item__thumb">
        
         <div className={carregou? '':''}>
-        <div style={{border: '5px solid #2152c1', borderRadius: '23px'}} className={carregou? '':''}>
+        <div className={carregou? '':''}>
         <a  href={"publicacao/"+noticia.id+"/"+noticia.slug}>
             <img
-              style={{border: '3px solid #0076da', borderRadius: '17px'}}
-              className="thumb"
+              style={{ borderRadius: '17px'}}
+              className="thumb image-post-list"
               alt={noticia.title.rendered}
               src={noticia["better_featured_image"]["source_url"]}
               width="290"
@@ -42,7 +42,7 @@ let carregou = true;
          </div>
 
        
-       
+        {/*  border: '3px solid #2152c1' */}
 
          
          
@@ -81,7 +81,7 @@ let carregou = true;
 
       <article style={{marginTop: '5px'}} className="jeg_post jeg_pl_md_1 format-standard sumir-post-desktop">
 																		<div className="jeg_thumb"> <a href={"/publicacao/"+noticia.id+"/"+noticia.slug}>
-																				<div className="thumbnail-container animate-lazy  size-715 "><img  style={{border: '3px solid #2152c1',height:'100%', borderRadius: '17px'}} width="350" height="250"
+																				<div className="thumbnail-container animate-lazy  size-715 "><img  style={{height:'100%', borderRadius: '17px'}} width="350" height="250"
 																					  src={noticia["better_featured_image"]["source_url"]}
 																						className="attachment-jnews-350x250 size-jnews-350x250 lazyload wp-post-image" alt="" loading="lazy"
 																						sizes="(max-width: 350px) 100vw, 350px"
