@@ -120,7 +120,7 @@ const HomePage = ({ totalPages, totalPost, page, posts, destaques, title }) => {
           <Head>
             <meta charSet="utf-8" />
             <meta name="language" content="pt-BR" />
-            <title>{title}</title>
+            <title>Segue o fluxo | Página {page} de {totalPages}</title>
             <meta name="description" content={"Busca por " + title} />
             <meta name="robots" content="none" />
             <div id="fb-root"></div>
