@@ -10,7 +10,25 @@ body {
   font-family: "Sabado";
   src: url("./sabado.otf") format("opentype");
 }
-
+.conteudo-playlist{
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  iframe{
+    position: absolute;
+    max-height: 260px;
+    top: 296px;
+    max-width: 736px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* right: 50%; */
+    /* left: 50%; */
+    margin: auto;
+    /* display: none; */
+    /* opacity: 29; */
+    z-index: 100000;
+  }
+}
 .confira{
   font-family: "Bebas Neue" !important;
     font-size: 28px;
