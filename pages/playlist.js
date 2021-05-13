@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Head from "next/head";
-
+import Relacionados from '../components/relacionados.js'
 export default function Playlist() {
   return (
     <>
@@ -44,6 +44,8 @@ export default function Playlist() {
     <Image style={{}} layout="fill" className="icon" src="/assets/playlist/8.svg" alt="Data"></Image>
     <Image style={{}} layout="fill" className="icon" src="/assets/playlist/9.svg" alt="Data"></Image>
     </div>
+
+    <Relacionados></Relacionados>
     </>
   );
 }
