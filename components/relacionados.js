@@ -4,7 +4,7 @@ import Image from "next/image";
 import Moment from 'react-moment';
 const axios = require("axios");
 
-export default function Relacionados({ children, showLatest, titleLatest }) {
+export default function Relacionados({ children, showLatest, titleLatest, maisAcessadas }) {
   useEffect(() => {
     // Atualiza o titulo do documento usando a API do browser
     getDestaque();
@@ -29,7 +29,7 @@ export default function Relacionados({ children, showLatest, titleLatest }) {
     <>
 <div className="related max max--margin-top">
         <h4 className="title title--small title--upper">
-          Confira também:
+          {maisAcessadas? 'Mais acessadas:':'Confira também:'}
         </h4>
         <div className="related__posts">
             {destaque.map(post => (  <article key={post.id} className="loop__item" role="article">

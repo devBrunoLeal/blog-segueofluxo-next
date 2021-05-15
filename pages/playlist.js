@@ -43,9 +43,11 @@ export default function Playlist() {
     <Image style={{}} layout="fill" className="icon" src="/assets/playlist/7.svg" alt="Data"></Image>
     <Image style={{}} layout="fill" className="icon" src="/assets/playlist/8.svg" alt="Data"></Image>
     <Image style={{}} layout="fill" className="icon" src="/assets/playlist/9.svg" alt="Data"></Image>
+    <div className="white-board"></div>
+    
     </div>
 
-    <Relacionados></Relacionados>
+    <Relacionados maisAcessadas="true" className="relacionados-playlist"></Relacionados>
     </>
   );
 }

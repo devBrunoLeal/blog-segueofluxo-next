@@ -10,9 +10,23 @@ body {
   font-family: "Sabado";
   src: url("./sabado.otf") format("opentype");
 }
+
+@media only screen and (max-width: 720px){
+.conteudo-playlist{
+  iframe{
+    width: 80%;
+    height: 600px;
+    max-height: 100% !important;
+  }
+}
+
+}
+
 .conteudo-playlist{
   width: 100%;
   height: 1000px;
+  margin-bottom: -204px;
+  margin-top: -50px;
   position: relative;
   iframe{
     position: absolute;
@@ -26,7 +40,7 @@ body {
     margin: auto;
     /* display: none; */
     /* opacity: 29; */
-    z-index: 100000;
+    z-index: 190;
   }
 }
 .confira{
@@ -38,6 +52,20 @@ body {
   .font-size-publi{
     font-size: 59px !important;
     line-height: 48px !important;
+  }
+
+  .relacionados-playlist{
+    margin-top: -200px !important;
+  }
+
+  .white-board{
+    width: 100%;
+    background: white;
+    height: 196px;
+
+    background-color: white;
+    position: absolute;
+    bottom: 0;
   }
 }
 
