@@ -14,7 +14,7 @@ export default function Latest({ children, showLatest, titleLatest }) {
 
   async function getDestaque() {
     await axios
-      .get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1&tags=7&per_page=10")
+      .get("https://api.segueofluxo.com/wp-json/wp/v2/posts?_embed=1&tags=7&per_page=5")
       .then(
         (response) => {
           console.log([response.data[0]]);
